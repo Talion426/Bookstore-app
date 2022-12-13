@@ -1,4 +1,4 @@
-import { Footer, Header, Mailing } from "./components";
+import { Footer, Header, Mailing, NewBooks } from "./components";
 import { Wrapper } from "./ui";
 
 export const App = () => {
@@ -6,6 +6,7 @@ export const App = () => {
     <Wrapper>
       <Header />
       <Mailing />
+      <NewBooks />
       <Footer />
     </Wrapper>
   );
