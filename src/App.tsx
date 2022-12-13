@@ -1,3 +1,9 @@
+import { Wrapper } from "./ui";
+
 export const App = () => {
-    return <div>App</div>;
+  return (
+    <Wrapper>
+      <div>App</div>
+    </Wrapper>
+  );
 };
