@@ -5,8 +5,8 @@ export const App = () => {
   return (
     <Wrapper>
       <Header />
-      <Mailing />
       <NewBooks />
+      <Mailing />
       <Footer />
     </Wrapper>
   );
