@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.js": "/Bookstore-app/static/js/main.44d92396.js",
+    "static/media/bookstore-logo-icon.svg": "/Bookstore-app/static/media/bookstore-logo-icon.4df062493d3c8a2d9a244c508c206884.svg",
+    "static/media/heart-icon.svg": "/Bookstore-app/static/media/heart-icon.28220c581538742fc7469c10d8a9e269.svg",
+    "static/media/shopping-bag-icon.svg": "/Bookstore-app/static/media/shopping-bag-icon.291776166f59fef865d350aaa5d72385.svg",
+    "static/media/search-icon.svg": "/Bookstore-app/static/media/search-icon.fb7c71339a4b264dfb3e9806f3b103eb.svg",
+    "static/media/account-icon.svg": "/Bookstore-app/static/media/account-icon.f95ce053779a6201d74bbfa54c39de4c.svg",
+    "static/media/burger-menu-icon.svg": "/Bookstore-app/static/media/burger-menu-icon.59dba82df335b19ebcaa59651c28f447.svg",
+    "index.html": "/Bookstore-app/index.html",
+    "main.44d92396.js.map": "/Bookstore-app/static/js/main.44d92396.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.44d92396.js"
+  ]
+}
