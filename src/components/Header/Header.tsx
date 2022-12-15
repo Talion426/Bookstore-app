@@ -1,8 +1,7 @@
 import { HeaderNavigation, Search, ThemeChanger } from "..";
 import { LogoIcon } from "../../assets";
 import { useInput } from "../../hooks";
-import { Color } from "../../ui";
-import { LogoWrapper, StyledHeader } from "./styles";
+import { LogoWrapper, SearchWrapper, StyledHeader } from "./styles";
 
 export const Header = () => {
   const search = useInput();
@@ -12,7 +11,9 @@ export const Header = () => {
       <LogoWrapper href="/">
         <LogoIcon />
       </LogoWrapper>
-      <Search {...search} type="search" placeholder="Search" />
+      <SearchWrapper>
+        <Search {...search} type="search" placeholder="Search" />
+      </SearchWrapper>
       <HeaderNavigation />
       <ThemeChanger type="checkbox" />
     </StyledHeader>

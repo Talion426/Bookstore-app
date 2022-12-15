@@ -1,13 +1,18 @@
-import { Footer, Header, Mailing, NewBooks } from "./components";
+import { useState } from "react";
+import { Menu, Footer, Header, Mailing, NewBooks } from "./components";
 import { Wrapper } from "./ui";
 
 export const App = () => {
+
   return (
-    <Wrapper>
-      <Header />
-      <NewBooks />
-      <Mailing />
-      <Footer />
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Header />
+        <NewBooks />
+        <Mailing />
+        <Footer />
+      </Wrapper>
+      <Menu />
+    </>
   );
 };

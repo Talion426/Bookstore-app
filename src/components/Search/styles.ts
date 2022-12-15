@@ -5,7 +5,7 @@ export const SearchWrapper = styled.div`
   position: relative;
 
   ${Media.LG} {
-    display: none;
+    width: 100%;
   }
 `;
 
@@ -25,6 +25,9 @@ export const StyledSearch = styled.input`
 
   ${Media.EL} {
     width: 480px;
+  }
+  ${Media.LG} {
+    width: 100%;
   }
 `;
 

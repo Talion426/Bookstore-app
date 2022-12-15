@@ -8,9 +8,8 @@ export const BooksListItem = styled.figure`
   height: 454px;
   max-width: 352px;
 
+  border: 2px solid ${Color.Secondary_Background};
   border-radius: 20px;
-
-  transition: all 0.2s ease-in-out;
 
   cursor: pointer;
 
@@ -59,6 +58,7 @@ export const Image = styled.img`
 
 export const ContentWrapper = styled.div`
   height: 170px;
+  padding: 0 5px;
 `;
 
 export const Title = styled.h3`

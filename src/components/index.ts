@@ -8,6 +8,7 @@ import { Title } from "./Title/Title";
 import { NewBooks } from "./NewBooks/NewBooks";
 import { BooksList } from "./BooksList/BooksList";
 import { BookListItem } from "./BooksListItem/BooksListItem";
+import { Menu } from "./Menu/Menu";
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   NewBooks,
   BooksList,
   BookListItem,
+  Menu,
 };
