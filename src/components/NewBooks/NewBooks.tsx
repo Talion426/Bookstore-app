@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { Title, BooksList } from "..";
-import { fetchNewBooks, getNewBooks, useAppDispatch, useAppSelector } from "../../store";
+import { Title, BooksList } from "components";
+import { fetchNewBooks, getNewBooks, useAppDispatch, useAppSelector } from "store";
 import { NewBooksWrapper } from "./styles";
 
 export const NewBooks = () => {

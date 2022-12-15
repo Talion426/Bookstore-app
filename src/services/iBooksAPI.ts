@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IResponseBook, IResponseNewBooks, IResponseSearch, ISearchResult } from "../types";
+import { IResponseBook, IResponseNewBooks, IResponseSearch, ISearchResult } from "types";
 
 class booksAPI {
   private readonly BASE_URL = process.env.REACT_APP_BASE_URL_BOOKS_API;

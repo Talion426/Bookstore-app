@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media, Color } from "../../ui";
+import { Media, Color } from "ui";
 
 export const StyledNav = styled.nav`
   display: flex;

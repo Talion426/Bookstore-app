@@ -1,5 +1,5 @@
-import { BookListItem } from "..";
-import { IBook } from "../../types";
+import { BookListItem } from "components";
+import { IBook } from "types";
 import { StyledBooksList } from "./styles";
 
 interface IProps {

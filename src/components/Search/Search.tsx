@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { feachSearchBooks, getSearchBooks, useAppDispatch, useAppSelector } from "../../store";
+import { feachSearchBooks, getSearchBooks, useAppDispatch, useAppSelector } from "store";
 import { StyledSearch, SearchButton, SearchWrapper } from "./styles";
-import { SearchIcon } from "../../assets";
+import { SearchIcon } from "assets";
 
 interface IProps {
   type: string;

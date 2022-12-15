@@ -1,7 +1,7 @@
 import { Color } from "./colors";
-import { ResetCSS } from "./resetCSS";
 import { GlobalStyles, Wrapper } from "./globalStyles";
-import { Typography } from "./typography";
 import { Media } from "./media";
+import { ResetCSS } from "./resetCSS";
+import { Typography } from "./typography";
 
 export { Color, ResetCSS, GlobalStyles, Wrapper, Typography, Media };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Typography, Media } from "../../ui";
+import { Typography, Media } from "ui";
 
 export const StyledTitle = styled.h1`
   margin-bottom: 40px;

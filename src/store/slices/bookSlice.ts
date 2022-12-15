@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { restBooksAPI } from "../../services";
-import { IResponseSearch, ISearchResult } from "../../types";
+import { restBooksAPI } from "services";
+import { IResponseSearch, ISearchResult } from "types";
 
 interface ISearchBook {
   result: IResponseSearch;

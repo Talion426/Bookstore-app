@@ -1,6 +1,6 @@
-import { HeaderNavigation, Search, ThemeChanger } from "..";
-import { LogoIcon } from "../../assets";
-import { useInput } from "../../hooks";
+import { HeaderNavigation, Search, ThemeChanger } from "components";
+import { LogoIcon } from "assets";
+import { useInput } from "hooks";
 import { LogoWrapper, SearchWrapper, StyledHeader } from "./styles";
 
 export const Header = () => {

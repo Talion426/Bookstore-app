@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color, Typography } from "../../ui";
+import { Color, Typography } from "ui";
 
 export const StyledMenu = styled.div`
   position: fixed;

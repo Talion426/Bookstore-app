@@ -1,7 +1,7 @@
-import { HeartIcon, ShoppingBagIcon, AccountIcon, BurgerMenuIcon } from "../../assets";
+import { HeartIcon, ShoppingBagIcon, AccountIcon, BurgerMenuIcon } from "assets";
 import { NavItem, ShoppingBagNavItem, StyledNav, BurgerMenuNavItem } from "./styles";
-import { Color } from "../../ui";
-import { useToggle } from "../../hooks";
+import { Color } from "ui";
+import { useToggle } from "hooks";
 
 export const HeaderNavigation = () => {
   const [isOpen, toggleOpen] = useToggle();

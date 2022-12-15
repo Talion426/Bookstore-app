@@ -1,9 +1,7 @@
-import { useState } from "react";
-import { Menu, Footer, Header, Mailing, NewBooks } from "./components";
-import { Wrapper } from "./ui";
+import { Menu, Footer, Header, Mailing, NewBooks } from "components";
+import { Wrapper } from "ui";
 
 export const App = () => {
-
   return (
     <>
       <Wrapper>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color, Typography, Media } from "../../ui";
+import { Color, Typography, Media } from "ui";
 
 export const BooksListItem = styled.figure`
   display: flex;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media } from "../../ui";
+import { Media } from "ui";
 
 export const StyledBooksList = styled.ul`
   display: grid;

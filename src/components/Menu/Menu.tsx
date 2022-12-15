@@ -1,5 +1,5 @@
-import { Search } from "../Search/Search";
-import { useInput } from "../../hooks";
+import { Search } from "components";
+import { useInput } from "hooks";
 import { MenuBody, Button, Link, StyledMenu } from "./styles";
 
 export const Menu = () => {
