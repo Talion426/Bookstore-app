@@ -5,6 +5,7 @@ import { ReactComponent as AccountIcon } from "./icons/account-icon.svg";
 import { ReactComponent as BurgerMenuIcon } from "./icons/burger-menu-icon.svg";
 import { ReactComponent as SearchIcon } from "./icons/search-icon.svg";
 import { ReactComponent as CancelIcon } from "./icons/cancel-icon.svg";
+import { ReactComponent as BackArrowIcon } from "./icons/back-arrow-icon.svg";
 
 export {
   LogoIcon,
@@ -14,4 +15,5 @@ export {
   BurgerMenuIcon,
   SearchIcon,
   CancelIcon,
+  BackArrowIcon,
 };
