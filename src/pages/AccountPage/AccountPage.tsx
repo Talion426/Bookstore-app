@@ -1,3 +1,10 @@
+import { Account } from "components";
+import { StyledAccount } from "./styles";
+
 export const AccountPage = () => {
-  return <div>AccountPage</div>;
+  return (
+    <StyledAccount>
+      <Account />
+    </StyledAccount>
+  );
 };
