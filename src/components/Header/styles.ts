@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Color, Media } from "ui";
 
@@ -16,7 +17,7 @@ export const StyledHeader = styled.header`
   border-bottom: 1px solid ${Color.Gray};
 `;
 
-export const LogoWrapper = styled.a`
+export const LogoWrapper = styled(NavLink)`
   display: block;
 
   svg {

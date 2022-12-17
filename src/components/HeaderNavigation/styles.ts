@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Media, Color } from "ui";
 
@@ -16,7 +17,7 @@ export const StyledNav = styled.nav`
   }
 `;
 
-export const NavItem = styled.a`
+export const NavItem = styled(NavLink)`
   display: block;
 
   svg {
@@ -30,7 +31,7 @@ export const NavItem = styled.a`
   }
 `;
 
-export const ShoppingBagNavItem = styled.a`
+export const ShoppingBagNavItem = styled(NavLink)`
   display: block;
 
   svg {

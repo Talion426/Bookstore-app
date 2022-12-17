@@ -1,4 +1,3 @@
-import { generatePrime } from "crypto";
 import { generatePath, Link } from "react-router-dom";
 import { ROUTE } from "router";
 import {

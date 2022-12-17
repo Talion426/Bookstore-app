@@ -1,5 +1,5 @@
 import { Layout } from "components";
-import { RequareAuth } from "components/RequareAuth/RequareAuth";
+import { RequareAuth } from "components";
 import {
   AccountPage,
   BookPage,

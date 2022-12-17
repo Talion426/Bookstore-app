@@ -31,7 +31,6 @@ export const Search = ({ placeholder, type, value, onChange }: IProps) => {
 
   return (
     <SearchWrapper>
-      {" "}
       <StyledSearch type={type} placeholder={placeholder} value={value} onChange={onChange} />
       <SearchButton onClick={handleParams}>
         <SearchIcon />

@@ -2,6 +2,7 @@ import { HeartIcon, ShoppingBagIcon, AccountIcon, BurgerMenuIcon } from "assets"
 import { NavItem, ShoppingBagNavItem, StyledNav, BurgerMenuNavItem } from "./styles";
 import { Color } from "ui";
 import { useToggle } from "hooks";
+import { ROUTE } from "router";
 
 export const HeaderNavigation = () => {
   const [isOpen, toggleOpen] = useToggle();
@@ -11,13 +12,13 @@ export const HeaderNavigation = () => {
 
   return (
     <StyledNav>
-      <NavItem href="/">
+      <NavItem to={ROUTE.FAVORITES}>
         <HeartIcon />
       </NavItem>
-      <ShoppingBagNavItem href="/">
+      <ShoppingBagNavItem to={ROUTE.CART}>
         <ShoppingBagIcon />
       </ShoppingBagNavItem>
-      <NavItem href="/">
+      <NavItem to={ROUTE.ACCOUNT}>
         <AccountIcon />
       </NavItem>
       <BurgerMenuNavItem type="button" onClick={handleMenu}>

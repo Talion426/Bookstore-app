@@ -10,6 +10,8 @@ import { BooksList } from "./BooksList/BooksList";
 import { BookListItem } from "./BooksListItem/BooksListItem";
 import { Menu } from "./Menu/Menu";
 import { Layout } from "./Layout/Layout";
+import { CustomNavLink } from "components/CustomNavLink/CustomNavLink";
+import { RequareAuth } from "./RequareAuth/RequareAuth";
 
 export {
   Header,
@@ -24,4 +26,6 @@ export {
   BookListItem,
   Menu,
   Layout,
+  CustomNavLink,
+  RequareAuth,
 };
