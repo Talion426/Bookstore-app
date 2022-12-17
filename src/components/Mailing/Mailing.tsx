@@ -1,4 +1,5 @@
-import { Form, Input, Button, StyledMailing, SubTitle, Title } from "./styles";
+import { Button } from "components";
+import { Form, Input, StyledMailing, SubTitle, Title } from "./styles";
 
 export const Mailing = () => {
   return (
@@ -9,7 +10,7 @@ export const Mailing = () => {
       </SubTitle>
       <Form>
         <Input type="email" placeholder="Your email" />
-        <Button>Subscribe</Button>
+        <Button type="button">Subscribe</Button>
       </Form>
     </StyledMailing>
   );
