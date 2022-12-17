@@ -13,8 +13,6 @@ import { Layout } from "./Layout/Layout";
 import { CustomNavLink } from "components/CustomNavLink/CustomNavLink";
 import { RequareAuth } from "./RequareAuth/RequareAuth";
 import { Button } from "./Button/Button";
-import { Input } from "./Input/Input";
-import { Account } from "./Account/Account";
 
 export {
   Header,
@@ -32,6 +30,4 @@ export {
   CustomNavLink,
   RequareAuth,
   Button,
-  Input,
-  Account,
 };

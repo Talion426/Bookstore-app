@@ -4,13 +4,14 @@ interface IProps {
   children: string;
   type: string;
   placeholder: string;
+  inputWidth?: string;
 }
 
-export const Input = ({ type, placeholder, children }: IProps) => {
+export const Input = (props: IProps) => {
   return (
     <InputWrapper>
-      <Label>{children}</Label>
-      <StyledInput type={type} placeholder={placeholder} />
+      <Label>{props.children}</Label>
+      <StyledInput {...props} />
     </InputWrapper>
   );
 };

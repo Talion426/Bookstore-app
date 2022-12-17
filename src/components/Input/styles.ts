@@ -13,21 +13,17 @@ export const Label = styled.label`
   color: ${Color.Primary};
 `;
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{
+  inputWidth?: string;
+}>`
   height: 56px;
+  width: ${({ inputWidth }) => inputWidth || "100%"};
   padding: 10px 20px;
   margin-bottom: 20px;
 
-  ${Typography.B1}
-
-  background: ${Color.Primary_Background};
   border: 1px solid ${Color.Gray};
 
   &::placeholder {
     color: ${Color.Secondary};
-  }
-
-  &:focus{
-    border: 2px solid ${Color.Gray};
   }
 `;
