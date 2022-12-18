@@ -9,8 +9,7 @@ interface IProps {
 }
 
 export const BooksList = ({ responseBooks }: IProps) => {
-  /* PAGINATION */
-  const [currentItems, setCurrentItems] = useState<object>({});
+  const [currentItems, setCurrentItems] = useState<IBook[]>([]);
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemOffset, setItemOffset] = useState<number>(0);
   const itemsPerPage = 9;
@@ -22,14 +21,14 @@ export const BooksList = ({ responseBooks }: IProps) => {
   }, [itemOffset, itemsPerPage, responseBooks]);
 
   const handlePageClick = (event: any): void => {
-    const newOffset = (event.selected * itemsPerPage) / responseBooks.length;
+    const newOffset = event.selected * itemsPerPage;
     setItemOffset(newOffset);
   };
 
   return (
     <>
       <StyledBooksList>
-        {responseBooks.map(({ isbn13, image, price, title, subtitle, url }) => (
+        {currentItems.map(({ isbn13, image, price, title, subtitle, url }) => (
           <BookListItem
             key={isbn13}
             image={image}
@@ -46,7 +45,8 @@ export const BooksList = ({ responseBooks }: IProps) => {
           breakLabel="..."
           nextLabel="Next"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={1}
+          marginPagesDisplayed={1}
           pageCount={pageCount}
           previousLabel="Prev"
           renderOnZeroPageCount={undefined}

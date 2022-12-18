@@ -31,6 +31,10 @@ export const StyledPagination = styled.div`
       color: ${Color.Secondary};
 
       border-top: 1px solid ${Color.Gray};
+
+      ${Media.MD} {
+        gap: 20px;
+      }
     }
     &__break,
     &__page {
