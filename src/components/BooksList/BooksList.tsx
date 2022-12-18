@@ -1,5 +1,5 @@
 import { BookListItem } from "components";
-import { ChangeEvent, FormEvent, HTMLInputTypeAttribute, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { IBook } from "types";
 import { StyledBooksList, StyledPagination } from "./styles";
@@ -23,6 +23,11 @@ export const BooksList = ({ responseBooks }: IProps) => {
   const handlePageClick = (event: any): void => {
     const newOffset = event.selected * itemsPerPage;
     setItemOffset(newOffset);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
