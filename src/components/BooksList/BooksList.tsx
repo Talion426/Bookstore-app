@@ -1,5 +1,5 @@
 import { BookListItem } from "components";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { IBook } from "types";
 import { StyledBooksList, StyledPagination } from "./styles";
@@ -12,16 +12,16 @@ export const BooksList = ({ responseBooks }: IProps) => {
   const [currentItems, setCurrentItems] = useState<IBook[]>([]);
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemOffset, setItemOffset] = useState<number>(0);
-  const itemsPerPage = 9;
+  const ITEMS_PER_PAGE = 9;
 
   useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
+    const endOffset = itemOffset + ITEMS_PER_PAGE;
     setCurrentItems(responseBooks.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(responseBooks.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, responseBooks]);
+    setPageCount(Math.ceil(responseBooks.length / ITEMS_PER_PAGE));
+  }, [itemOffset, ITEMS_PER_PAGE, responseBooks]);
 
-  const handlePageClick = (event: any): void => {
-    const newOffset = event.selected * itemsPerPage;
+  const handlePageClick = (event: { selected: number }): void => {
+    const newOffset = event.selected * ITEMS_PER_PAGE;
     setItemOffset(newOffset);
 
     window.scrollTo({
@@ -62,12 +62,6 @@ export const BooksList = ({ responseBooks }: IProps) => {
           previousClassName="paginate__previous"
           nextClassName="paginate__next"
           disabledClassName="paginate__disabled"
-          breakLinkClassName="paginate__break-link"
-          pageLinkClassName="paginate__page-link"
-          activeLinkClassName="paginate__active-link"
-          previousLinkClassName="paginate__previous-link"
-          nextLinkClassName="paginate__next-link"
-          disabledLinkClassName="paginate__disabled-link"
         />
       </StyledPagination>
     </>

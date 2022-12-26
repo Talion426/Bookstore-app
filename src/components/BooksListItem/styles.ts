@@ -58,7 +58,7 @@ export const Image = styled.img`
 
 export const ContentWrapper = styled.div`
   height: 170px;
-  padding: 0 5px;
+  padding: 0 10px;
 `;
 
 export const Title = styled.h3`
