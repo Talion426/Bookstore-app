@@ -1,15 +1,11 @@
-import { BackArrowIcon } from "assets";
-import { Button, Input, Title } from "components";
-import { ROUTE } from "router";
+import { BackArrowButton, Button, Input, Title } from "components";
 import { Color } from "ui";
-import { ButtonsWrapper, StyledArrow, ProfileWrapper, PasswordWrapper, Subtitle } from "./styles";
+import { ButtonsWrapper, ProfileWrapper, PasswordWrapper, Subtitle } from "./styles";
 
 export const Account = () => {
   return (
     <form>
-      <StyledArrow to={ROUTE.HOME}>
-        <BackArrowIcon fill={Color.Primary} />
-      </StyledArrow>
+      <BackArrowButton />
       <Title text="Account" />
       <Subtitle>Profile</Subtitle>
       <ProfileWrapper>

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color, Typography } from "ui";
 
@@ -19,11 +18,6 @@ export const Subtitle = styled.h3`
   margin-bottom: 16px;
   ${Typography.H2}
   color: ${Color.Primary};
-`;
-
-export const StyledArrow = styled(Link)`
-  display: block;
-  margin-bottom: 32px;
 `;
 
 export const ButtonsWrapper = styled.div`

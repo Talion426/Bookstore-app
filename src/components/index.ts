@@ -14,6 +14,7 @@ import { RequareAuth } from "./RequareAuth/RequareAuth";
 import { Button } from "./Button/Button";
 import { Input } from "./Input/Input";
 import { Account } from "./Account/Account";
+import { BackArrowButton } from "./BackArrowButton/BackArrowButton";
 
 export {
   Header,
@@ -32,4 +33,5 @@ export {
   Button,
   Input,
   Account,
+  BackArrowButton,
 };
