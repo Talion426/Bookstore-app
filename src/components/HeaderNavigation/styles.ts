@@ -13,6 +13,7 @@ export const StyledNav = styled.nav`
   }
 
   ${Media.LG} {
+    display: none;
     gap: 24px;
   }
 `;
@@ -25,10 +26,6 @@ export const NavItem = styled(NavLink)`
       stroke: ${Color.Primary};
     }
   }
-
-  ${Media.LG} {
-    display: none;
-  }
 `;
 
 export const ShoppingBagNavItem = styled(NavLink)`
@@ -38,15 +35,5 @@ export const ShoppingBagNavItem = styled(NavLink)`
     path {
       stroke: ${Color.Primary};
     }
-  }
-`;
-
-export const BurgerMenuNavItem = styled.button`
-  display: none;
-
-  background: none;
-
-  ${Media.LG} {
-    display: block;
   }
 `;

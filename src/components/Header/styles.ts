@@ -4,7 +4,7 @@ import { Color, Media } from "ui";
 
 export const StyledHeader = styled.header`
   position: relative;
-  z-index: 101;
+  z-index: 100;
 
   display: flex;
   justify-content: space-between;
@@ -32,5 +32,15 @@ export const SearchWrapper = styled.div`
 
   ${Media.LG} {
     display: none;
+  }
+`;
+
+export const BurgerMenuNavItem = styled.button`
+  display: none;
+
+  background: none;
+
+  ${Media.LG} {
+    display: block;
   }
 `;

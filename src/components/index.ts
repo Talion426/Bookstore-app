@@ -5,7 +5,6 @@ import { ThemeChanger } from "./ThemeChanger/ThemeChanger";
 import { Footer } from "./Footer/Footer";
 import { Mailing } from "./Mailing/Mailing";
 import { Title } from "./Title/Title";
-import { NewBooks } from "./NewBooks/NewBooks";
 import { BooksList } from "./BooksList/BooksList";
 import { BookListItem } from "./BooksListItem/BooksListItem";
 import { Menu } from "./Menu/Menu";
@@ -24,7 +23,6 @@ export {
   Footer,
   Mailing,
   Title,
-  NewBooks,
   BooksList,
   BookListItem,
   Menu,
