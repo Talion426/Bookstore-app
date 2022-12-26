@@ -5,8 +5,6 @@ import { ResetCSS } from "./resetCSS";
 import { DarkTheme, LightTheme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
-  @import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
-  @import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700);
 
   ${ResetCSS}
 
