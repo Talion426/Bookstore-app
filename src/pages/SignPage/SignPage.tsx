@@ -1,3 +1,10 @@
+import { Sign } from "components";
+import { StyledSignPage } from "./styles";
+
 export const SignPage = () => {
-  return <div>SignPage</div>;
+  return (
+    <StyledSignPage>
+      <Sign />
+    </StyledSignPage>
+  );
 };

@@ -15,6 +15,9 @@ import { Button } from "./Button/Button";
 import { Input } from "./Input/Input";
 import { Account } from "./Account/Account";
 import { BackArrowButton } from "./BackArrowButton/BackArrowButton";
+import { Sign } from "./Sign/Sign";
+import { SignIn } from "./SignIn/SignIn";
+import { SignUp } from "./SignUp/SignUp";
 
 export {
   Header,
@@ -34,4 +37,7 @@ export {
   Input,
   Account,
   BackArrowButton,
+  Sign,
+  SignIn,
+  SignUp,
 };
