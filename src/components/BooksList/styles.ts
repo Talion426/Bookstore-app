@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Color, Media, Typography } from "ui";
-import { NextArrowIcon, PrevArrowIcon } from "assets";
 
 export const StyledBooksList = styled.ul`
   display: grid;

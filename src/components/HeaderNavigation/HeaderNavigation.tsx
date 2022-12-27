@@ -1,4 +1,4 @@
-import { HeartIcon, ShoppingBagIcon, AccountIcon, BurgerMenuIcon } from "assets";
+import { HeartIcon, ShoppingBagIcon, AccountIcon } from "assets";
 import { NavItem, ShoppingBagNavItem, StyledNav } from "./styles";
 import { ROUTE } from "router";
 
