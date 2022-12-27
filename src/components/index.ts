@@ -18,6 +18,8 @@ import { BackArrowButton } from "./BackArrowButton/BackArrowButton";
 import { Sign } from "./Sign/Sign";
 import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
+import { FavoriteItem } from "./FavoriteItem/FavoriteItem";
+import { FavoriteList } from "./FavoriteList/FavoriteList";
 
 export {
   Header,
@@ -40,4 +42,6 @@ export {
   Sign,
   SignIn,
   SignUp,
+  FavoriteItem,
+  FavoriteList,
 };

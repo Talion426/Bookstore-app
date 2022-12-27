@@ -5,8 +5,6 @@ import { ButtonsWrapper, ProfileWrapper, PasswordWrapper, Subtitle } from "./sty
 export const Account = () => {
   return (
     <form>
-      <BackArrowButton />
-      <Title text="Account" />
       <Subtitle>Profile</Subtitle>
       <ProfileWrapper>
         <Input type="text" placeholder="Name">
