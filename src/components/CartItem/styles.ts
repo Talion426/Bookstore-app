@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
-export const StyledFavoriteItem = styled.div`
+export const StyledCartItem = styled.div`
   position: relative;
 
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 32px;
 
   padding-bottom: 48px;
@@ -14,6 +15,9 @@ export const StyledFavoriteItem = styled.div`
 
   ${Media.MD} {
     flex-direction: column;
+
+    max-width: 420px;
+    margin: 0 auto;
   }
   ${Media.SM} {
     margin-bottom: 24px;
@@ -59,11 +63,11 @@ export const Description = styled.div`
   flex: 1 0 auto;
 
   ${Media.LG} {
-    padding-right: 56px;
     flex: 1 1 auto;
+
+    max-width: 420px;
   }
   ${Media.MD} {
-    padding-right: 0;
     margin-bottom: 24px;
   }
 `;
@@ -81,22 +85,52 @@ export const Subtitle = styled.p`
   color: ${Color.Secondary};
 `;
 
-export const Popularity = styled.div`
+export const ButtonsWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 188px;
+  gap: 10px;
+`;
 
-  ${Media.LG} {
-    justify-content: space-between;
-    gap: 20px;
+export const Button = styled.button`
+  width: 56px;
+  height: 56px;
+
+  background: none;
+
+  svg {
+    fill: ${Color.Primary};
   }
 `;
 
-export const Price = styled.p`
-  ${Typography.H3};
+export const Counter = styled.span`
+  display: block;
+
+  ${Typography.H3}
 `;
 
-export const HeartButton = styled.button`
+export const Price = styled.p`
+  margin-right: 140px;
+  ${Typography.H2};
+
+  ${Media.EL} {
+    margin-right: 90px;
+  }
+  ${Media.LG} {
+    position: absolute;
+    bottom: 42px;
+    right: 0;
+
+    margin-right: 0;
+  }
+  ${Media.MD} {
+    bottom: 68px;
+  }
+  ${Media.SM} {
+    bottom: 30px;
+  }
+`;
+
+export const DeleteButton = styled.button`
   position: absolute;
   top: calc(50% - 56px);
   right: 0;
@@ -108,10 +142,8 @@ export const HeartButton = styled.button`
   background: none;
 
   svg {
-    fill: ${Color.Red};
-
     path {
-      stroke: ${Color.Red};
+      fill: ${Color.Primary};
     }
   }
 
@@ -122,5 +154,11 @@ export const HeartButton = styled.button`
   ${Media.MD} {
     background: ${Color.Primary};
     border-radius: 20px;
+
+    svg {
+      path {
+        fill: ${Color.Primary_Background};
+      }
+    }
   }
 `;

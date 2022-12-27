@@ -20,6 +20,8 @@ import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
 import { FavoriteItem } from "./FavoriteItem/FavoriteItem";
 import { FavoriteList } from "./FavoriteList/FavoriteList";
+import { CartList } from "./CartList/CartList";
+import { CartItem } from "./CartItem/CartItem";
 
 export {
   Header,
@@ -44,4 +46,6 @@ export {
   SignUp,
   FavoriteItem,
   FavoriteList,
+  CartList,
+  CartItem,
 };

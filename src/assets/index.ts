@@ -8,6 +8,8 @@ import { ReactComponent as CancelIcon } from "./icons/cancel.svg";
 import { ReactComponent as BackArrowIcon } from "./icons/back-arrow.svg";
 import { ReactComponent as PrevArrowIcon } from "./icons/prev-arrow.svg";
 import { ReactComponent as NextArrowIcon } from "./icons/next-arrow.svg";
+import { ReactComponent as PlusIcon } from "./icons/plus.svg";
+import { ReactComponent as MinusIcon } from "./icons/minus.svg";
 
 export {
   LogoIcon,
@@ -20,4 +22,6 @@ export {
   BackArrowIcon,
   PrevArrowIcon,
   NextArrowIcon,
+  PlusIcon,
+  MinusIcon,
 };
