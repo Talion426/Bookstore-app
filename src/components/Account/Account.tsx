@@ -1,4 +1,4 @@
-import { BackArrowButton, Button, Input, Title } from "components";
+import { Button, Input } from "components";
 import { Color } from "ui";
 import { ButtonsWrapper, ProfileWrapper, PasswordWrapper, Subtitle } from "./styles";
 

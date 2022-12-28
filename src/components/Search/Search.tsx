@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { feachSearchBooks, getSearchBooks, useAppDispatch, useAppSelector } from "store";
+import { feachSearchBooks, useAppDispatch } from "store";
 import { StyledSearch, SearchButton, SearchWrapper } from "./styles";
 import { SearchIcon } from "assets";
 
@@ -17,13 +17,13 @@ export const Search = ({ placeholder, type, value, onChange }: IProps) => {
   });
 
   const dispatch = useAppDispatch();
-  const { result, isLoading } = useAppSelector(getSearchBooks);
+  //const { result, isLoading } = useAppSelector(getSearchBooks);
 
   useEffect(() => {
     dispatch(feachSearchBooks(params));
   }, [dispatch, params]);
 
-  const { books, page, error, total } = result;
+  //const { books, page, error, total } = result;
 
   const handleParams = () => {
     setParams({ searchValue: value, page: "1" });
