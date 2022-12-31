@@ -17,6 +17,8 @@ export const StyledMailing = styled.section`
 `;
 
 export const Form = styled.form`
+  position: relative;
+
   display: grid;
   grid-template-columns: 4fr 1fr;
 
@@ -55,4 +57,13 @@ export const SubTitle = styled.p`
   ${Media.SM} {
     max-width: 300px;
   }
+`;
+
+export const ErrorMessage = styled.p`
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+
+  ${Typography.B1}
+  color: ${Color.Red};
 `;
