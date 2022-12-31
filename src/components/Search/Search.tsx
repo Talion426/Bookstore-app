@@ -1,5 +1,5 @@
 import { ChangeEvent, useEffect, useState } from "react";
-import { feachSearchBooks, useAppDispatch } from "store";
+import { fetchSearchBooks, useAppDispatch } from "store";
 import { StyledSearch, SearchButton, SearchWrapper } from "./styles";
 import { SearchIcon } from "assets";
 
@@ -20,7 +20,7 @@ export const Search = ({ placeholder, type, value, onChange }: IProps) => {
   //const { result, isLoading } = useAppSelector(getSearchBooks);
 
   useEffect(() => {
-    dispatch(feachSearchBooks(params));
+    dispatch(fetchSearchBooks(params));
   }, [dispatch, params]);
 
   //const { books, page, error, total } = result;

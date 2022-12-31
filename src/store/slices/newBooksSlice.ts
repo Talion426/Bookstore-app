@@ -5,18 +5,18 @@ import { IBook } from "types";
 interface INewBook {
   result: IBook[];
   isLoading: boolean;
-  error: null;
+  error: null | string;
 }
-
-export const fetchNewBooks = createAsyncThunk<IBook[]>("newBooks/fetchNewBooks", async () => {
-  return (await restBooksAPI.getNewBooks()).books;
-});
 
 const initialState: INewBook = {
   result: [],
   isLoading: false,
   error: null,
 };
+
+export const fetchNewBooks = createAsyncThunk<IBook[]>("newBooks/fetchNewBooks", async () => {
+  return (await restBooksAPI.getNewBooks()).books;
+});
 
 const newBooksSlice = createSlice({
   name: "newBooks",

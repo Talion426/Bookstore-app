@@ -1,5 +1,11 @@
 import axios from "axios";
-import { IResponseBook, IResponseNewBooks, IResponseSearch, ISearchResult } from "types";
+import {
+  IBookISBN13,
+  IBookDetails,
+  IResponseNewBooks,
+  IResponseSearch,
+  ISearchResult,
+} from "types";
 
 class booksAPI {
   private readonly BASE_URL = process.env.REACT_APP_BASE_URL_BOOKS_API;
@@ -8,7 +14,7 @@ class booksAPI {
     search: "search",
     books: "books",
   };
-  private readonly API = axios.create({
+  API = axios.create({
     baseURL: this.BASE_URL,
   });
 
@@ -26,8 +32,8 @@ class booksAPI {
     return data;
   }
 
-  public async getBook(isbn13: string) {
-    const { data } = await this.API.get<IResponseBook>(`${this.ENDPOINTS.books}/${isbn13}}`);
+  public async getBookDetails({ isbn13 }: IBookISBN13) {
+    const { data } = await this.API.get<IBookDetails>(`${this.ENDPOINTS.books}/${isbn13}}`);
 
     return data;
   }

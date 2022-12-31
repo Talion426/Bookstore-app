@@ -2,16 +2,21 @@ import { useAppDispatch } from "./hooks/useAppDispatch";
 import { useAppSelector } from "./hooks/useAppSelector";
 import { getNewBooks } from "./selectors/newBooksSelectors";
 import { fetchNewBooks } from "./slices/newBooksSlice";
-import { store } from "./store";
-import { feachSearchBooks } from "./slices/searchSlice";
+import { persistor, store } from "./store";
+import { fetchSearchBooks } from "./slices/searchSlice";
 import { getSearchBooks } from "./selectors/searchBooksSelectors";
+import { getBookDetails } from "./selectors/bookDetailsSelector";
+import { fetchGetBookDetails } from "./slices/bookDetailsSlice";
 
 export {
   store,
+  persistor,
   useAppDispatch,
   useAppSelector,
   fetchNewBooks,
   getNewBooks,
-  feachSearchBooks,
+  fetchSearchBooks,
   getSearchBooks,
+  getBookDetails,
+  fetchGetBookDetails,
 };

@@ -13,7 +13,7 @@ export interface IResponseNewBooks {
   books: IBook[];
 }
 
-export interface IResponseBook {
+export interface IBookDetails {
   error: string;
   title: string;
   subtitle: string;
