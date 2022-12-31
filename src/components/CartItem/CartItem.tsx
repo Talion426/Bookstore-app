@@ -12,32 +12,53 @@ import {
   Price,
   DeleteButton,
 } from "./styles";
+import { IBook } from "types";
 
-export const CartItem = () => {
-  const counter = 1;
+interface IProps {
+  book: IBook;
+  amount: number;
+  deleteBook: () => void;
+  incAmount: () => void;
+  decAmount: () => void;
+}
+
+export const CartItem = ({ book, amount, deleteBook, incAmount, decAmount }: IProps) => {
+  const { image, title, subtitle, price } = book;
+
+  const handleDeleteBook = () => {
+    deleteBook();
+  };
+
+  const handleIncAmount = () => {
+    incAmount();
+  };
+
+  const handleDecAmount = () => {
+    decAmount();
+  };
 
   return (
     <StyledCartItem>
       <ImageWrapper>
-        <Image src="" alt="" />
-        <DeleteButton>
+        <Image src={image} alt={title} />
+        <DeleteButton onClick={handleDeleteBook}>
           <CancelIcon />
         </DeleteButton>
       </ImageWrapper>
       <Description>
-        <Title>Robot Operating System (ROS) for Absolute Beginners </Title>
-        <Subtitle>by Lentin Joseph, Apress 2018</Subtitle>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
         <ButtonsWrapper>
-          <Button>
+          <Button onClick={handleDecAmount}>
             <MinusIcon />
           </Button>
-          <Counter>{counter}</Counter>
-          <Button>
+          <Counter>{amount}</Counter>
+          <Button onClick={handleIncAmount}>
             <PlusIcon />
           </Button>
         </ButtonsWrapper>
       </Description>
-      <Price>$31.38</Price>
+      <Price>{price}</Price>
     </StyledCartItem>
   );
 };

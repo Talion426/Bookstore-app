@@ -4,6 +4,7 @@ import newBooksReducer from "./slices/newBooksSlice";
 import searchBooksReduser from "./slices/searchSlice";
 import bookDetailsReducer from "./slices/bookDetailsSlice";
 import favoriteReducer from "./slices/favoriteSlice";
+import cartReducer from "./slices/cartSlice";
 import storage from "redux-persist/lib/storage";
 import {
   persistStore,
@@ -22,6 +23,7 @@ const persistConfig = {
 };
 
 const persistedFavoriteReducer = persistReducer(persistConfig, favoriteReducer);
+const persistedCartReducer = persistReducer(persistConfig, cartReducer);
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -34,6 +36,7 @@ export const store = configureStore({
     searchBooks: searchBooksReduser,
     bookISBN: bookDetailsReducer,
     favoriteBooks: persistedFavoriteReducer,
+    cartBooks: persistedCartReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

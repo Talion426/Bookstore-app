@@ -1,12 +1,38 @@
-import { BackArrowButton, CartList, Title } from "components";
-import { StyledCartPage } from "./styles";
+import { BackArrowButton, CartItem, Title } from "components";
+import {
+  decAmount,
+  deleteBook,
+  getCartBooks,
+  incAmount,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
+import { StyledCartPage, CartList } from "./styles";
 
 export const CartPage = () => {
+  const { cart, amount } = useAppSelector(getCartBooks);
+  const dispatch = useAppDispatch();
+
   return (
     <StyledCartPage>
       <BackArrowButton />
       <Title text="Your Cart" />
-      <CartList />
+      <CartList>
+        {cart.map((book) => {
+          return (
+            <CartItem
+              key={book.isbn13}
+              book={book}
+              amount={amount}
+              incAmount={() => dispatch(incAmount(book.isbn13))}
+              decAmount={() => dispatch(decAmount(book.isbn13))}
+              deleteBook={() => {
+                dispatch(deleteBook(book.isbn13));
+              }}
+            />
+          );
+        })}
+      </CartList>
     </StyledCartPage>
   );
 };
