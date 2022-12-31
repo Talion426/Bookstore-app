@@ -18,7 +18,7 @@ export const SearchPage = () => {
         <SearchBooksWrapper>
           <Title text="' ' Search result" />
           <Subtitle>{`Found ${result.length} books`}</Subtitle>
-          <BooksList responseBooks={result} />
+          <BooksList books={result} />
         </SearchBooksWrapper>
       )}
     </section>

@@ -1,5 +1,6 @@
 import { generatePath, Link } from "react-router-dom";
 import { ROUTE } from "router";
+import { IBook } from "types";
 import {
   PriceWrapper,
   ImageWrapper,
@@ -12,18 +13,15 @@ import {
 } from "./styles";
 
 interface IProps {
-  image: string;
-  price: string;
-  subtitle: string;
-  title: string;
-  url: string;
-  isbn13: string;
+  book: IBook;
 }
 
-export const BookListItem = ({ image, title, url, subtitle, price, isbn13 }: IProps) => {
+export const BookListItem = ({ book }: IProps) => {
+  const { image, title, subtitle, isbn13, price } = book;
+
   return (
     <BooksListItem>
-      <Link to={generatePath(ROUTE.BOOK, { isbn13 })}>
+      <Link to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })}>
         <ImageWrapper>
           <Image src={image} alt={title} />
         </ImageWrapper>

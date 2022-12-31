@@ -7,6 +7,7 @@ interface Iprops {
   buttonColor?: string;
   backgroundColor?: string;
   borderColor?: string;
+  onClick?: (event: React.MouseEvent) => void;
 }
 
 export const Button = (props: Iprops) => {

@@ -1,6 +1,5 @@
 import { IBookDetails } from "types";
 import { PriceBlock, DescriptionItem, StyledDescription, DescriptionTitle, Text } from "./styles";
-import { useState } from "react";
 
 interface IProps {
   book: IBookDetails;

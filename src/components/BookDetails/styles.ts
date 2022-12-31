@@ -14,6 +14,8 @@ export const StyledBookDetails = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,5 +67,25 @@ export const DescriptionWrapper = styled.div`
   }
   ${Media.MD} {
     width: 100%;
+  }
+`;
+
+export const AddFavoriteButton = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding: 16px 16px 12px;
+
+  background: ${Color.Primary};
+
+  svg {
+    path {
+      stroke: ${Color.Primary_Background};
+    }
+  }
+
+  ${Media.MD} {
+    padding: 12px 12px 8px;
   }
 `;

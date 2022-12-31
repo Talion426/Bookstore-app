@@ -18,7 +18,7 @@ export const HomePage = () => {
       ) : (
         <NewBooksWrapper>
           <Title text="New Releases Books" />
-          <BooksList responseBooks={result} />
+          <BooksList books={result} />
         </NewBooksWrapper>
       )}
       <Mailing />

@@ -47,10 +47,10 @@ export interface ISearchParams {
 }
 
 export interface ISearchResult {
-  searchValue: string;
-  page: string;
+  searchValue: string | undefined;
+  page: string | undefined;
 }
 
 export interface IBookISBN13 {
-  isbn13: string;
+  isbn13: string | undefined;
 }

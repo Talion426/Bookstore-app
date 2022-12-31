@@ -19,7 +19,7 @@ export const fetchGetBookDetails = createAsyncThunk<
   IBookDetails,
   IBookISBN13,
   { rejectValue: string }
->("getBook/fetchGetBook", async (params, { rejectWithValue }) => {
+>("getBookDetails/fetchGetBook", async (params, { rejectWithValue }) => {
   try {
     return await restBooksAPI.getBookDetails(params);
   } catch (error) {

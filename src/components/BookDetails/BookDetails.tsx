@@ -1,13 +1,31 @@
 import { BackArrowButton, Button, Description, Mailing, Title } from "components";
 import { IBookDetails } from "types";
-import { StyledBookDetails, DescriptionWrapper, ImageWrapper, Image } from "./styles";
+import {
+  StyledBookDetails,
+  DescriptionWrapper,
+  ImageWrapper,
+  Image,
+  AddFavoriteButton,
+} from "./styles";
+import { HeartIcon } from "assets";
 
 interface IProps {
   book: IBookDetails;
+  amount: number;
+  addToFavorite: () => void;
+  addToCart: () => void;
 }
 
-export const BookDetails = ({ book }: IProps) => {
+export const BookDetails = ({ book, addToFavorite, addToCart }: IProps) => {
   const { title, image } = book;
+
+  const handleAddToCart = () => {
+    addToCart();
+  };
+
+  const handleAddToFavorite = () => {
+    addToFavorite();
+  };
 
   return (
     <section>
@@ -16,10 +34,15 @@ export const BookDetails = ({ book }: IProps) => {
       <StyledBookDetails>
         <ImageWrapper>
           <Image src={image} alt={title} />
+          <AddFavoriteButton onClick={handleAddToFavorite}>
+            <HeartIcon />
+          </AddFavoriteButton>
         </ImageWrapper>
         <DescriptionWrapper>
           <Description book={book} />
-          <Button type="button">add to card</Button>
+          <Button type="button" onClick={handleAddToCart}>
+            Add to card
+          </Button>
         </DescriptionWrapper>
       </StyledBookDetails>
       <Mailing />

@@ -5,10 +5,10 @@ import { IBook } from "types";
 import { StyledBooksList, StyledPagination } from "./styles";
 
 interface IProps {
-  responseBooks: IBook[];
+  books: IBook[];
 }
 
-export const BooksList = ({ responseBooks }: IProps) => {
+export const BooksList = ({ books }: IProps) => {
   const [currentItems, setCurrentItems] = useState<IBook[]>([]);
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemOffset, setItemOffset] = useState<number>(0);
@@ -16,9 +16,9 @@ export const BooksList = ({ responseBooks }: IProps) => {
 
   useEffect(() => {
     const endOffset = itemOffset + ITEMS_PER_PAGE;
-    setCurrentItems(responseBooks.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(responseBooks.length / ITEMS_PER_PAGE));
-  }, [itemOffset, ITEMS_PER_PAGE, responseBooks]);
+    setCurrentItems(books.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(books.length / ITEMS_PER_PAGE));
+  }, [itemOffset, ITEMS_PER_PAGE, books]);
 
   const handlePageClick = (event: { selected: number }): void => {
     const newOffset = event.selected * ITEMS_PER_PAGE;
@@ -33,16 +33,8 @@ export const BooksList = ({ responseBooks }: IProps) => {
   return (
     <>
       <StyledBooksList>
-        {currentItems.map(({ isbn13, image, price, title, subtitle, url }) => (
-          <BookListItem
-            key={isbn13}
-            image={image}
-            price={price}
-            subtitle={subtitle}
-            title={title}
-            url={url}
-            isbn13={isbn13}
-          />
+        {currentItems.map((book) => (
+          <BookListItem key={book.isbn13} book={book} />
         ))}
       </StyledBooksList>
       <StyledPagination>
