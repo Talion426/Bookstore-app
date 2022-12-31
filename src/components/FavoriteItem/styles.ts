@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
-export const StyledFavoriteItem = styled.div`
+export const StyledFavoriteItem = styled.li`
   position: relative;
 
   display: flex;

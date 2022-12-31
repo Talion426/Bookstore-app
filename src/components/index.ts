@@ -19,7 +19,6 @@ import { Sign } from "./Sign/Sign";
 import { SignIn } from "./SignIn/SignIn";
 import { SignUp } from "./SignUp/SignUp";
 import { FavoriteItem } from "./FavoriteItem/FavoriteItem";
-import { FavoriteList } from "./FavoriteList/FavoriteList";
 import { CartList } from "./CartList/CartList";
 import { CartItem } from "./CartItem/CartItem";
 import { BookDetails } from "./BookDetails/BookDetails";
@@ -47,7 +46,6 @@ export {
   SignIn,
   SignUp,
   FavoriteItem,
-  FavoriteList,
   CartList,
   CartItem,
   BookDetails,

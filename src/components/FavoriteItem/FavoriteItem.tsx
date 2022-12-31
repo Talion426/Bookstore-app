@@ -1,4 +1,5 @@
 import { HeartIcon } from "assets";
+import { IBookDetails } from "types";
 import {
   Subtitle,
   Title,
@@ -11,20 +12,27 @@ import {
   HeartButton,
 } from "./styles";
 
-export const FavoriteItem = () => {
+interface IProps {
+  book: IBookDetails;
+  deleteFavoriteBook: () => void;
+}
+
+export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
+  const { image, title, subtitle, price, rating } = book;
+
   return (
     <StyledFavoriteItem>
       <ImageWrapper>
-        <Image src="" alt="" />
-        <HeartButton>
+        <Image src={image} alt={title} />
+        <HeartButton onClick={deleteFavoriteBook}>
           <HeartIcon />
         </HeartButton>
       </ImageWrapper>
       <Description>
-        <Title>Robot Operating System (ROS) for Absolute Beginners</Title>
-        <Subtitle>by Lentin Joseph, Apress 2018</Subtitle>
+        <Title>{title}</Title>
+        <Subtitle>{subtitle}</Subtitle>
         <Popularity>
-          <Price>36$</Price>
+          <Price>{price}</Price>
           <p>* * * * *</p>
         </Popularity>
       </Description>
