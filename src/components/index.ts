@@ -22,6 +22,7 @@ import { FavoriteItem } from "./FavoriteItem/FavoriteItem";
 import { CartItem } from "./CartItem/CartItem";
 import { BookDetails } from "./BookDetails/BookDetails";
 import { Description } from "./Description/Description";
+import { HeaderControl } from "./HeaderControl/HeaderControl";
 
 export {
   Header,
@@ -48,4 +49,5 @@ export {
   CartItem,
   BookDetails,
   Description,
+  HeaderControl,
 };

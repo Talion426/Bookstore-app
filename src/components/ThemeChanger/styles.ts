@@ -43,8 +43,4 @@ export const StyledThemeChanger = styled.input`
       background: ${Color.Light};
     }
   }
-
-  ${Media.LG} {
-    display: none;
-  }
 `;

@@ -3,12 +3,10 @@ import styled from "styled-components";
 import { Color, Media } from "ui";
 
 export const StyledHeader = styled.header`
-  position: relative;
-  z-index: 100;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 
   padding: 24px 0px;
   margin-bottom: 72px;
@@ -18,6 +16,9 @@ export const StyledHeader = styled.header`
 `;
 
 export const LogoWrapper = styled(NavLink)`
+  position: relative;
+  z-index: 11;
+
   display: block;
 
   svg {
@@ -27,20 +28,9 @@ export const LogoWrapper = styled(NavLink)`
   }
 `;
 
-export const SearchWrapper = styled.div`
-  display: block;
-
-  ${Media.LG} {
-    display: none;
-  }
-`;
-
 export const BurgerMenuNavItem = styled.button`
-  display: none;
+  position: relative;
+  z-index: 11;
 
   background: none;
-
-  ${Media.LG} {
-    display: block;
-  }
 `;

@@ -33,7 +33,7 @@ class booksAPI {
   }
 
   public async getBookDetails({ isbn13 }: IBookISBN13) {
-    const { data } = await this.API.get<IBookDetails>(`${this.ENDPOINTS.books}/${isbn13}}`);
+    const { data } = await this.API.get<IBookDetails>(`${this.ENDPOINTS.books}/${isbn13}`);
 
     return data;
   }
