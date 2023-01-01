@@ -15,7 +15,7 @@ export const StyledHeaderControl = styled.div<{ isOpen: boolean }>`
     max-width: 750px;
   }
   ${Media.LG} {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
