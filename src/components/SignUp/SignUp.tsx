@@ -4,6 +4,8 @@ import { StyledSignUp, ErrorMessage, InputWrapper, Label, StyledInput } from "./
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { setUser } from "store";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { ROUTE } from "router";
 
 interface ISignUp {
   name: string;
@@ -14,6 +16,7 @@ interface ISignUp {
 
 export const SignUp = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -43,6 +46,7 @@ export const SignUp = () => {
             isAuth: true,
           }),
         );
+        navigate(ROUTE.HOME);
       })
       .catch(() => alert("User existing!"));
   };

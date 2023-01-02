@@ -14,7 +14,6 @@ export const StyledNav = styled.nav`
 
   ${Media.LG} {
     flex-direction: column;
-    flex: 1 0 auto;
     gap: 0px;
 
     width: 100%;

@@ -20,7 +20,7 @@ export const Sign = () => {
           Sign in
         </SignItem>
         <SignItem onClick={handleSignIn} activeColor={!isSignIn} activeBorder={!isSignIn}>
-          Sign on
+          Sign up
         </SignItem>
       </SignNavigation>
       {isSignIn ? <SignIn /> : <SignUp />}

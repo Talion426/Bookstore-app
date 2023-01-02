@@ -6,15 +6,17 @@ import { ButtonsWrapper, ProfileWrapper, PasswordWrapper, Subtitle } from "./sty
 export const Account = () => {
   const { name, email } = useAppSelector(getUser);
 
+  console.log(name);
+
   return (
     <form>
       <Subtitle>Profile</Subtitle>
       <ProfileWrapper>
         <Input type="text" placeholder="Name">
-          {name}
+          Name
         </Input>
         <Input type="email" placeholder="Email">
-          {email}
+          Email
         </Input>
       </ProfileWrapper>
       <Subtitle>Password</Subtitle>

@@ -5,6 +5,7 @@ import { StyledSignIn, CustomLink, ErrorMessage, InputWrapper, Label, StyledInpu
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { setUser } from "store";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 interface ISingIn {
   email: string;
@@ -13,6 +14,7 @@ interface ISingIn {
 
 export const SignIn = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -37,6 +39,7 @@ export const SignIn = () => {
             isAuth: true,
           }),
         );
+        navigate(ROUTE.HOME);
       })
       .catch(() => alert("Invalid user!"));
   };

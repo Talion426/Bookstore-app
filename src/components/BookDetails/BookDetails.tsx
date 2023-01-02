@@ -1,4 +1,4 @@
-import { BackArrowButton, Button, Description, Mailing, Title, DetailsTabs } from "components";
+import { BackArrowButton, Button, Description, Title, DetailsTabs } from "components";
 import { IBookDetails } from "types";
 import {
   StyledBookDetails,
@@ -41,12 +41,11 @@ export const BookDetails = ({ book, addToFavorite, addToCart }: IProps) => {
         <DescriptionWrapper>
           <Description book={book} />
           <Button type="button" onClick={handleAddToCart}>
-            Add to card
+            Add to cart
           </Button>
         </DescriptionWrapper>
       </StyledBookDetails>
       <DetailsTabs book={book} />
-      <Mailing />
     </section>
   );
 };

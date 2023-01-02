@@ -1,4 +1,4 @@
-import { BookDetails, Title } from "components";
+import { BookDetails, DetailsSlider, Mailing, Title } from "components";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import {
@@ -27,12 +27,16 @@ export const BookPage = () => {
       {isLoading && <Title text="Loading..." />}
       {error && <p>{error}</p>}
       {result && (
-        <BookDetails
-          book={result}
-          amount={amount}
-          addToCart={() => dispatch(addBook(result))}
-          addToFavorite={() => dispatch(addFavorite(result))}
-        />
+        <>
+          <BookDetails
+            book={result}
+            amount={amount}
+            addToCart={() => dispatch(addBook(result))}
+            addToFavorite={() => dispatch(addFavorite(result))}
+          />
+          <Mailing />
+          <DetailsSlider />
+        </>
       )}
     </StyledBookPage>
   );
