@@ -29,7 +29,7 @@ export const fetchSearchBooks = createAsyncThunk<
 });
 
 const searchBooksSlice = createSlice({
-  name: "newBooks",
+  name: "searchBooks",
   initialState,
   reducers: {},
   extraReducers(builder) {

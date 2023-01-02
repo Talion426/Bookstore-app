@@ -38,6 +38,7 @@ export const store = configureStore({
     favoriteBooks: persistedFavoriteReducer,
     cartBooks: persistedCartReducer,
   },
+
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

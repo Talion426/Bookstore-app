@@ -24,6 +24,7 @@ export const fetchGetBookDetails = createAsyncThunk<
     return await restBooksAPI.getBookDetails(params);
   } catch (error) {
     const errorResponse = error as AxiosError;
+
     return rejectWithValue(errorResponse.message);
   }
 });
@@ -36,10 +37,12 @@ const bookDetailsSlice = createSlice({
     builder.addCase(fetchGetBookDetails.pending, (state) => {
       state.isLoading = true;
     });
+
     builder.addCase(fetchGetBookDetails.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.result = payload;
     });
+
     builder.addCase(fetchGetBookDetails.rejected, (state, { payload }) => {
       if (payload) {
         state.isLoading = true;

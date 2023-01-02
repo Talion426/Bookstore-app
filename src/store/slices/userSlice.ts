@@ -24,6 +24,7 @@ const userSlice = createSlice({
       state.email = action.payload.email;
       state.isAuth = true;
     },
+
     removeUser: (state) => {
       state.name = "";
       state.id = "";

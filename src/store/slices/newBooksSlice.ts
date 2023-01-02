@@ -26,12 +26,14 @@ const newBooksSlice = createSlice({
     builder.addCase(fetchNewBooks.pending, (state) => {
       state.isLoading = true;
     });
+
     builder.addCase(fetchNewBooks.fulfilled, (state, action) => {
       if (action.payload) {
         state.isLoading = false;
         state.result = action.payload;
       }
     });
+
     builder.addCase(fetchNewBooks.rejected, (state, action: any) => {
       state.isLoading = true;
       state.result = action.payload;

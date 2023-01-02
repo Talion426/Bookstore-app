@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { NewBooksWrapper } from "./styles";
 
 export const HomePage = () => {
-  const { isLoading, result } = useAppSelector(getNewBooks);
+  const { isLoading, result, error } = useAppSelector(getNewBooks);
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchNewBooks());
@@ -13,9 +13,9 @@ export const HomePage = () => {
 
   return (
     <section>
-      {isLoading ? (
-        <Title text="Loading..." />
-      ) : (
+      {isLoading && <Title text="Loading..." />}
+      {error && <p>{error}</p>}
+      {result && (
         <NewBooksWrapper>
           <Title text="New Releases Books" />
           <BooksList books={result} />

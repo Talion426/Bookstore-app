@@ -7,7 +7,6 @@ import { Mailing } from "./Mailing/Mailing";
 import { Title } from "./Title/Title";
 import { BooksList } from "./BooksList/BooksList";
 import { BookListItem } from "./BooksListItem/BooksListItem";
-import { Menu } from "./Menu/Menu";
 import { Layout } from "./Layout/Layout";
 import { CustomNavLink } from "components/CustomNavLink/CustomNavLink";
 import { RequareAuth } from "./RequareAuth/RequareAuth";
@@ -34,7 +33,6 @@ export {
   Title,
   BooksList,
   BookListItem,
-  Menu,
   Layout,
   CustomNavLink,
   RequareAuth,

@@ -15,6 +15,7 @@ const favoriteSlice = createSlice({
   reducers: {
     addFavorite: (state, action: PayloadAction<IBookDetails>) => {
       const itemInCart = state.favorite.find((item) => item.isbn13 === action.payload.isbn13);
+
       if (!itemInCart) {
         state.favorite.push({
           ...action.payload,
