@@ -22,6 +22,7 @@ import { CartItem } from "./CartItem/CartItem";
 import { BookDetails } from "./BookDetails/BookDetails";
 import { Description } from "./Description/Description";
 import { HeaderControl } from "./HeaderControl/HeaderControl";
+import { StarsRating } from "./StarsRating/StarsRating";
 
 export {
   Header,
@@ -48,4 +49,5 @@ export {
   BookDetails,
   Description,
   HeaderControl,
+  StarsRating,
 };

@@ -10,25 +10,19 @@ export const StyledDescription = styled.ul`
 export const PriceBlock = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   margin-bottom: 24px;
+`;
 
+export const Price = styled.p`
   ${Typography.H2}
-
-  ${Media.LG} {
-    flex-direction: column;
-  }
-  ${Media.MD} {
-    flex-direction: row;
-  }
-  ${Media.SM} {
-    flex-direction: column;
-  }
 `;
 
 export const DescriptionItem = styled.li`
   display: flex;
   justify-content: space-between;
+  gap: 50px;
 
   ${Typography.B1};
 

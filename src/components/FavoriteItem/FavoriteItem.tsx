@@ -1,4 +1,5 @@
 import { HeartIcon } from "assets";
+import { StarsRating } from "components";
 import { IBookDetails } from "types";
 import {
   Subtitle,
@@ -33,7 +34,7 @@ export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
         <Subtitle>{subtitle}</Subtitle>
         <Popularity>
           <Price>{price}</Price>
-          <p>* * * * *</p>
+          <StarsRating stars={rating} />
         </Popularity>
       </Description>
     </StyledFavoriteItem>

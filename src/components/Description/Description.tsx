@@ -1,5 +1,13 @@
+import { StarsRating } from "components";
 import { IBookDetails } from "types";
-import { PriceBlock, DescriptionItem, StyledDescription, DescriptionTitle, Text } from "./styles";
+import {
+  Price,
+  PriceBlock,
+  DescriptionItem,
+  StyledDescription,
+  DescriptionTitle,
+  Text,
+} from "./styles";
 
 interface IProps {
   book: IBookDetails;
@@ -11,8 +19,8 @@ export const Description = ({ book }: IProps) => {
   return (
     <StyledDescription>
       <PriceBlock>
-        <span>{price}</span>
-        <span>* * * * *</span>
+        <Price>{price}</Price>
+        <StarsRating stars={rating} />
       </PriceBlock>
       <DescriptionItem>
         <Text>Authors:</Text>
