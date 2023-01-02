@@ -2,6 +2,9 @@ import { Button } from "components";
 import { useForm } from "react-hook-form";
 import { ROUTE } from "router";
 import { StyledSignIn, CustomLink, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { setUser } from "store";
+import { useDispatch } from "react-redux";
 
 interface ISingIn {
   email: string;
@@ -9,6 +12,8 @@ interface ISingIn {
 }
 
 export const SignIn = () => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -20,12 +25,24 @@ export const SignIn = () => {
     },
   });
 
-  const onSubmit = (data: ISingIn) => {
-    return data;
+  const handleSignIn = ({ email, password }: ISingIn) => {
+    const auth = getAuth();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            isAuth: true,
+          }),
+        );
+      })
+      .catch(() => alert("Invalid user!"));
   };
 
   return (
-    <StyledSignIn onSubmit={handleSubmit(onSubmit)}>
+    <StyledSignIn onSubmit={handleSubmit(handleSignIn)}>
       <InputWrapper>
         <Label>Email</Label>
         <StyledInput

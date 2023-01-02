@@ -5,6 +5,7 @@ import { getSearchBooks } from "./selectors/searchBooksSelectors";
 import { getBookDetails } from "./selectors/bookDetailsSelector";
 import { getFavoriteBooks } from "./selectors/favoriteBooksSelector";
 import { getCartBooks } from "./selectors/cartSelector";
+import { getUser } from "./selectors/userSelectors";
 import { fetchNewBooks } from "./slices/newBooksSlice";
 import { fetchSearchBooks } from "./slices/searchSlice";
 import { fetchGetBookDetails } from "./slices/bookDetailsSlice";
@@ -23,6 +24,7 @@ export {
   getBookDetails,
   getFavoriteBooks,
   getCartBooks,
+  getUser,
   fetchGetBookDetails,
   fetchSearchBooks,
   fetchNewBooks,

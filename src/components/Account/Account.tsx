@@ -1,17 +1,20 @@
 import { Button, Input } from "components";
+import { getUser, useAppSelector } from "store";
 import { Color } from "ui";
 import { ButtonsWrapper, ProfileWrapper, PasswordWrapper, Subtitle } from "./styles";
 
 export const Account = () => {
+  const { name, email } = useAppSelector(getUser);
+
   return (
     <form>
       <Subtitle>Profile</Subtitle>
       <ProfileWrapper>
         <Input type="text" placeholder="Name">
-          Name
+          {name}
         </Input>
         <Input type="email" placeholder="Email">
-          Email
+          {email}
         </Input>
       </ProfileWrapper>
       <Subtitle>Password</Subtitle>

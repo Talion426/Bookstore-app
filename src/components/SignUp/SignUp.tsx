@@ -1,6 +1,9 @@
 import { Button } from "components";
 import { useForm } from "react-hook-form";
 import { StyledSignUp, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { setUser } from "store";
+import { useDispatch } from "react-redux";
 
 interface ISignUp {
   name: string;
@@ -8,7 +11,10 @@ interface ISignUp {
   password: string;
   confirmPassword: string;
 }
+
 export const SignUp = () => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -23,12 +29,26 @@ export const SignUp = () => {
     },
   });
 
-  const onSubmit = (data: ISignUp) => {
-    return data;
+  const handleSignUp = (userData: ISignUp) => {
+    const { email, password, name } = userData;
+    const auth = getAuth();
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        dispatch(
+          setUser({
+            email: user.email,
+            id: user.uid,
+            name: name,
+            isAuth: true,
+          }),
+        );
+      })
+      .catch(() => alert("User existing!"));
   };
 
   return (
-    <StyledSignUp onSubmit={handleSubmit(onSubmit)}>
+    <StyledSignUp onSubmit={handleSubmit(handleSignUp)}>
       <InputWrapper>
         <Label>Name</Label>
         <StyledInput
@@ -100,7 +120,7 @@ export const SignUp = () => {
         <ErrorMessage>{errors.confirmPassword?.message}</ErrorMessage>
       </InputWrapper>
 
-      <Button type="submit">Sign on</Button>
+      <Button type="submit">Sign up</Button>
     </StyledSignUp>
   );
 };
