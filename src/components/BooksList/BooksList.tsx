@@ -1,8 +1,7 @@
-import { BookListItem } from "components";
-import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
+import { BookListItem, Pagination } from "components";
 import { IBook } from "types";
-import { StyledBooksList, StyledPagination } from "./styles";
+import { StyledBooksList } from "./styles";
+import { useEffect, useState } from "react";
 
 interface IProps {
   books: IBook[];
@@ -37,25 +36,7 @@ export const BooksList = ({ books }: IProps) => {
           <BookListItem key={book.isbn13} book={book} />
         ))}
       </StyledBooksList>
-      <StyledPagination>
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel="Next"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={1}
-          marginPagesDisplayed={1}
-          pageCount={pageCount}
-          previousLabel="Prev"
-          renderOnZeroPageCount={undefined}
-          containerClassName="paginate__container"
-          breakClassName="paginate__break"
-          pageClassName="paginate__page"
-          activeClassName="paginate__active"
-          previousClassName="paginate__previous"
-          nextClassName="paginate__next"
-          disabledClassName="paginate__disabled"
-        />
-      </StyledPagination>
+      <Pagination pageCount={pageCount} PageClick={handlePageClick} />
     </>
   );
 };

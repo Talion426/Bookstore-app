@@ -23,6 +23,7 @@ import { BookDetails } from "./BookDetails/BookDetails";
 import { Description } from "./Description/Description";
 import { HeaderControl } from "./HeaderControl/HeaderControl";
 import { StarsRating } from "./StarsRating/StarsRating";
+import { Pagination } from "./Pagination/Pagination";
 
 export {
   Header,
@@ -50,4 +51,5 @@ export {
   Description,
   HeaderControl,
   StarsRating,
+  Pagination,
 };
