@@ -1,4 +1,4 @@
-import { BackArrowButton, Button, Description, Mailing, Title } from "components";
+import { BackArrowButton, Button, Description, Mailing, Title, DetailsTabs } from "components";
 import { IBookDetails } from "types";
 import {
   StyledBookDetails,
@@ -45,6 +45,7 @@ export const BookDetails = ({ book, addToFavorite, addToCart }: IProps) => {
           </Button>
         </DescriptionWrapper>
       </StyledBookDetails>
+      <DetailsTabs book={book} />
       <Mailing />
     </section>
   );
