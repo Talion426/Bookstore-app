@@ -1,16 +1,18 @@
 import { InputWrapper, Label, StyledInput } from "./styles";
 
 interface IProps {
-  children: string;
+  label: string;
   type: string;
   placeholder: string;
+  value?: string;
+  disabled?: boolean;
 }
 
-export const Input = ({ type, placeholder, children }: IProps) => {
+export const Input = (props: IProps) => {
   return (
     <InputWrapper>
-      <Label>{children}</Label>
-      <StyledInput type={type} placeholder={placeholder} />
+      <Label>{props.label}</Label>
+      <StyledInput {...props} />
     </InputWrapper>
   );
 };

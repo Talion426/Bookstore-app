@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReduser from "./slices/userSlice";
+import userReducer from "./slices/userSlice";
 import newBooksReducer from "./slices/newBooksSlice";
 import searchBooksReduser from "./slices/searchSlice";
 import bookDetailsReducer from "./slices/bookDetailsSlice";
@@ -24,6 +24,7 @@ const persistConfig = {
 
 const persistedFavoriteReducer = persistReducer(persistConfig, favoriteReducer);
 const persistedCartReducer = persistReducer(persistConfig, cartReducer);
+const persistedUserReducer = persistReducer(persistConfig, userReducer);
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -31,7 +32,7 @@ export type AppDispatch = typeof store.dispatch;
 
 export const store = configureStore({
   reducer: {
-    user: userReduser,
+    user: persistedUserReducer,
     newBooks: newBooksReducer,
     searchBooks: searchBooksReduser,
     bookISBN: bookDetailsReducer,

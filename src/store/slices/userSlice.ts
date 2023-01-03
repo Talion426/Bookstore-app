@@ -4,6 +4,7 @@ interface IUser {
   name: string;
   email: string;
   id: string;
+  password: string;
   isAuth: boolean;
 }
 
@@ -11,6 +12,7 @@ const initialState: IUser = {
   name: "",
   email: "",
   id: "",
+  password: "",
   isAuth: false,
 };
 
@@ -22,6 +24,7 @@ const userSlice = createSlice({
       state.name = action.payload.name;
       state.id = action.payload.id;
       state.email = action.payload.email;
+      state.password = action.payload.password;
       state.isAuth = true;
     },
 
@@ -29,6 +32,7 @@ const userSlice = createSlice({
       state.name = "";
       state.id = "";
       state.email = "";
+      state.password = "";
       state.isAuth = false;
     },
   },

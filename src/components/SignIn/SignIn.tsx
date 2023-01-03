@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 interface ISingIn {
+  name?: string;
   email: string;
   password: string;
 }
@@ -27,7 +28,8 @@ export const SignIn = () => {
     },
   });
 
-  const handleSignIn = ({ email, password }: ISingIn) => {
+  const handleSignIn = (userData: ISingIn) => {
+    const { name, email, password } = userData;
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -36,6 +38,8 @@ export const SignIn = () => {
           setUser({
             email: user.email,
             id: user.uid,
+            name: name,
+            password: password,
             isAuth: true,
           }),
         );

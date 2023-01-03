@@ -1,35 +1,24 @@
 import { Button, Input } from "components";
-import { getUser, useAppSelector } from "store";
+import { getUser, removeUser, useAppDispatch, useAppSelector } from "store";
 import { Color } from "ui";
 import { ButtonsWrapper, ProfileWrapper, PasswordWrapper, Subtitle } from "./styles";
 
 export const Account = () => {
-  const { name, email } = useAppSelector(getUser);
-
-  console.log(name);
+  const dispatch = useAppDispatch();
+  const { name, email, password } = useAppSelector(getUser);
 
   return (
     <form>
       <Subtitle>Profile</Subtitle>
       <ProfileWrapper>
-        <Input type="text" placeholder="Name">
-          Name
-        </Input>
-        <Input type="email" placeholder="Email">
-          Email
-        </Input>
+        <Input type="text" placeholder="Name" label="Name" value={name} disabled />
+        <Input type="email" placeholder="Email" label="Email" value={email} disabled />
       </ProfileWrapper>
       <Subtitle>Password</Subtitle>
       <PasswordWrapper>
-        <Input type="password" placeholder="Password">
-          Password
-        </Input>
-        <Input type="password" placeholder="New password">
-          New password
-        </Input>
-        <Input type="password" placeholder="Confirm new password">
-          Confirm new password
-        </Input>
+        <Input type="password" placeholder="Password" label="Password" value={password} disabled />
+        <Input type="password" placeholder="New password" label="New password" />
+        <Input type="password" placeholder="Confirm new password" label="Confirm new password" />
       </PasswordWrapper>
       <ButtonsWrapper>
         <Button type="submit" buttonWidth="227px">
@@ -41,8 +30,9 @@ export const Account = () => {
           buttonColor={Color.Primary}
           backgroundColor={Color.Primary_Background}
           borderColor={Color.Primary}
+          onClick={() => dispatch(removeUser())}
         >
-          Cancel
+          Log out
         </Button>
       </ButtonsWrapper>
     </form>

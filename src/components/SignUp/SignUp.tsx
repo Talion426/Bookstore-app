@@ -42,6 +42,7 @@ export const SignUp = () => {
           setUser({
             email: user.email,
             id: user.uid,
+            password: password,
             name: name,
             isAuth: true,
           }),

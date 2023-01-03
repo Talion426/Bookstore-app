@@ -41,16 +41,17 @@ export const ButtonWrapper = styled.div`
 
   width: 100%;
 `;
+
 export const LinkButton = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 45px;
-  width: 100px;
+  height: 40px;
+  width: 80px;
   border-radius: 20px;
 
-  ${Typography.H3}
+  ${Typography.S1}
   color: ${Color.Primary_Background};
 
   background: ${Color.Primary};
@@ -74,6 +75,10 @@ export const LinkButton = styled(Link)`
   ${Media.LG} {
     height: 60px;
     width: 100%;
+
+    ${Typography.H3}
+    color: ${Color.Primary_Background};
+
     border-radius: 0;
   }
 `;

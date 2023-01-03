@@ -1,7 +1,7 @@
 import { Button, HeaderNavigation, Search, ThemeChanger } from "components";
 import { useInput, useWindowSize } from "hooks";
 import { ROUTE } from "router";
-import { getUser, useAppSelector } from "store";
+import { getUser, removeUser, useAppDispatch, useAppSelector } from "store";
 import { StyledHeaderControl, ButtonWrapper, LinkButton } from "./styles";
 
 interface IProps {
@@ -11,6 +11,7 @@ interface IProps {
 export const HeaderControl = ({ isOpen }: IProps) => {
   const { width = 0 } = useWindowSize();
   const search = useInput();
+  const dispatch = useAppDispatch();
   const { isAuth } = useAppSelector(getUser);
 
   return (
@@ -23,7 +24,9 @@ export const HeaderControl = ({ isOpen }: IProps) => {
         <>
           <ButtonWrapper />
           {isAuth ? (
-            <Button type="button">Log out</Button>
+            <Button type="button" onClick={() => dispatch(removeUser())}>
+              Log out
+            </Button>
           ) : (
             <LinkButton to={ROUTE.SIGN}>Sign In</LinkButton>
           )}
