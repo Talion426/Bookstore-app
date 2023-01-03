@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media, Color } from "../../ui";
+import { Media, Color } from "ui";
 
 export const StyledBookDetails = styled.div`
   display: flex;
@@ -78,12 +78,6 @@ export const AddFavoriteButton = styled.button`
   padding: 16px 16px 12px;
 
   background: ${Color.Primary};
-
-  svg {
-    path {
-      stroke: ${Color.Primary_Background};
-    }
-  }
 
   ${Media.MD} {
     padding: 12px 12px 8px;
