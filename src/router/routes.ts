@@ -1,6 +1,6 @@
 export enum ROUTE {
   HOME = "/Bookstore-app",
-  SEARCH = "search",
+  SEARCH = "search/:searchValue/:page",
   FAVORITES = "favorite",
   CART = "cart",
   BOOK = "book/:isbn13",

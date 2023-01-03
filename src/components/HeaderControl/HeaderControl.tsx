@@ -1,8 +1,17 @@
-import { Button, HeaderNavigation, Search, ThemeChanger } from "components";
+import { SearchIcon } from "assets";
+import { Button, HeaderNavigation, ThemeChanger } from "components";
 import { useInput, useWindowSize } from "hooks";
+import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 import { getUser, removeUser, useAppDispatch, useAppSelector } from "store";
-import { StyledHeaderControl, ButtonWrapper, LinkButton } from "./styles";
+import {
+  StyledHeaderControl,
+  ButtonWrapper,
+  LinkButton,
+  SearchWrapper,
+  Search,
+  SearchButton,
+} from "./styles";
 
 interface IProps {
   isOpen: boolean;
@@ -10,13 +19,23 @@ interface IProps {
 
 export const HeaderControl = ({ isOpen }: IProps) => {
   const { width = 0 } = useWindowSize();
-  const search = useInput();
   const dispatch = useAppDispatch();
   const { isAuth } = useAppSelector(getUser);
+  const { value, onChange } = useInput();
+  const navigate = useNavigate();
+  
+  const handleSearch = () => {
+    navigate(`search/${value}/1`);
+  };
 
   return (
     <StyledHeaderControl isOpen={isOpen}>
-      <Search {...search} type="search" placeholder="Search" />
+      <SearchWrapper>
+        <Search value={value} placeholder="Search" onChange={onChange} />
+        <SearchButton onClick={handleSearch}>
+          <SearchIcon />
+        </SearchButton>
+      </SearchWrapper>
       <ThemeChanger type="checkbox" />
       {!isAuth && width > 992 && <LinkButton to={ROUTE.SIGN}>Sign In</LinkButton>}
       {isAuth && <HeaderNavigation />}
