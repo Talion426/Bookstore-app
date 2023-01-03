@@ -7,4 +7,5 @@ export enum ROUTE {
   ACCOUNT = "account",
   SIGN = "sign",
   RESET = "reset",
+  FORGOT = "forgot",
 }

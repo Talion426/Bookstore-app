@@ -6,6 +6,7 @@ import { BookPage } from "./BookPage/BookPage";
 import { AccountPage } from "./AccountPage/AccountPage";
 import { SignPage } from "./SignPage/SignPage";
 import { ResetPage } from "./ResetPage/ResetPage";
+import { ForgotPage } from "./ForgotPage/ForgotPage";
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   AccountPage,
   SignPage,
   ResetPage,
+  ForgotPage,
 };

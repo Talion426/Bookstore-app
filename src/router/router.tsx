@@ -5,6 +5,7 @@ import {
   BookPage,
   CartPage,
   FavoritesPage,
+  ForgotPage,
   HomePage,
   ResetPage,
   SearchPage,
@@ -26,6 +27,7 @@ export const router = createBrowserRouter(
         <Route path={ROUTE.CART} element={<CartPage />} />
         <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
         <Route path={ROUTE.RESET} element={<ResetPage />} />
+        <Route path={ROUTE.FORGOT} element={<ForgotPage />} />
       </Route>
     </Route>,
   ),
