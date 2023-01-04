@@ -5,7 +5,7 @@ import { useWindowSize } from "hooks";
 
 export const HeaderNavigation = () => {
   const { width = 0 } = useWindowSize();
-  const isMobile = width > 993;
+  const isMobile = width >= 992;
 
   return (
     <StyledNav>

@@ -16,6 +16,14 @@ export const GlobalStyles = createGlobalStyle`
     ${LightTheme}
   }
 
+  html[overflow="true"]{
+    overflow: hidden;
+  }
+
+  html[overflow="false"]{
+    overflow: visible;
+  }
+
   body {
     color: ${Color.Primary};
     background-color: ${Color.Primary_Background};
@@ -23,6 +31,8 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const Wrapper = styled.div`
+  position: relative;
+
   display: flex;
   flex-direction: column;
 

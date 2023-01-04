@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Color, Media } from "ui";
+import { Color } from "ui";
 
 export const StyledHeader = styled.header`
   display: flex;

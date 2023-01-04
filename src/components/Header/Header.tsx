@@ -4,10 +4,15 @@ import { useToggle, useWindowSize } from "hooks";
 import { BurgerMenuNavItem, LogoWrapper, StyledHeader } from "./styles";
 import { ROUTE } from "router";
 import { Color } from "ui";
+import { useEffect } from "react";
 
 export const Header = () => {
   const { width = 0 } = useWindowSize();
   const [isOpen, toggleNav] = useToggle();
+
+  useEffect(() => {
+    document.documentElement.setAttribute("overflow", String(isOpen));
+  }, [isOpen]);
 
   return (
     <StyledHeader>
