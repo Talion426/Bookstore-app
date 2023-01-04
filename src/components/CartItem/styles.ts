@@ -100,6 +100,12 @@ export const Button = styled.button`
   svg {
     fill: ${Color.Primary};
   }
+
+  &:disabled {
+    svg {
+      fill: ${Color.Secondary};
+    }
+  }
 `;
 
 export const Counter = styled.span`

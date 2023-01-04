@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Media } from "ui";
 
 export const StyledCartPage = styled.section`
+  position: relative;
+
   flex: 1 0 auto;
 
   margin-bottom: 72px;

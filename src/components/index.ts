@@ -27,6 +27,7 @@ import { DetailsTabs } from "./DetailsTabs/DetailsTabs";
 import { DetailsSlider } from "./DetailsSlider/DetailsSlider";
 import { Forgot } from "./Forgot/Forgot";
 import { Reset } from "./Reset/Reset";
+import { CartTotalPrice } from "./CartTotalPrice/CartTotalPrice";
 //import {} from ".//";
 
 export {
@@ -59,4 +60,5 @@ export {
   DetailsSlider,
   Forgot,
   Reset,
+  CartTotalPrice,
 };

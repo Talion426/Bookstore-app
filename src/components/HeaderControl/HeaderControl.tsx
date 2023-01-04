@@ -23,7 +23,7 @@ export const HeaderControl = ({ isOpen }: IProps) => {
   const { isAuth } = useAppSelector(getUser);
   const { value, onChange } = useInput();
   const navigate = useNavigate();
-  
+
   const handleSearch = () => {
     navigate(`search/${value}/1`);
   };

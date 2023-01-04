@@ -12,18 +12,17 @@ import {
   Price,
   DeleteButton,
 } from "./styles";
-import { IBook } from "types";
+import { ICartItem } from "types";
 
 interface IProps {
-  book: IBook;
-  amount: number;
+  book: ICartItem;
   deleteBook: () => void;
   incAmount: () => void;
   decAmount: () => void;
 }
 
-export const CartItem = ({ book, amount, deleteBook, incAmount, decAmount }: IProps) => {
-  const { image, title, subtitle, price } = book;
+export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => {
+  const { image, title, subtitle, price, summary } = book;
 
   const handleDeleteBook = () => {
     deleteBook();
@@ -35,6 +34,10 @@ export const CartItem = ({ book, amount, deleteBook, incAmount, decAmount }: IPr
 
   const handleDecAmount = () => {
     decAmount();
+  };
+
+  const handleSummary = () => {
+    return summary === 1;
   };
 
   return (
@@ -49,10 +52,10 @@ export const CartItem = ({ book, amount, deleteBook, incAmount, decAmount }: IPr
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
         <ButtonsWrapper>
-          <Button onClick={handleDecAmount}>
+          <Button onClick={handleDecAmount} disabled={handleSummary()}>
             <MinusIcon />
           </Button>
-          <Counter>{amount}</Counter>
+          <Counter>{summary}</Counter>
           <Button onClick={handleIncAmount}>
             <PlusIcon />
           </Button>

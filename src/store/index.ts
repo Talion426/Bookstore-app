@@ -10,7 +10,7 @@ import { fetchNewBooks } from "./slices/newBooksSlice";
 import { fetchSearchBooks } from "./slices/searchSlice";
 import { fetchGetBookDetails } from "./slices/bookDetailsSlice";
 import { addFavorite, deleteFavorite } from "./slices/favoriteSlice";
-import { addBook, deleteBook, incAmount, decAmount } from "./slices/cartSlice";
+import { addBook, deleteBook, incAmount, decAmount, getBooksTotalPrice } from "./slices/cartSlice";
 import { setUser, removeUser } from "./slices/userSlice";
 import { persistor, store } from "./store";
 
@@ -33,6 +33,7 @@ export {
   deleteBook,
   incAmount,
   decAmount,
+  getBooksTotalPrice,
   deleteFavorite,
   setUser,
   removeUser,

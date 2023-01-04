@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { Color } from "ui";
 
 export const StyledHeader = styled.header`
+  position: relative;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;

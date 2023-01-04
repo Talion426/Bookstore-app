@@ -3,8 +3,7 @@ import { useForm } from "react-hook-form";
 import { ROUTE } from "router";
 import { StyledSignIn, CustomLink, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { setUser } from "store";
-import { useDispatch } from "react-redux";
+import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 
 interface ISingIn {
@@ -14,7 +13,7 @@ interface ISingIn {
 }
 
 export const SignIn = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const {
@@ -32,9 +31,6 @@ export const SignIn = () => {
   const handleSignIn = (userData: ISingIn) => {
     const { name, email, password } = userData;
     const auth = getAuth();
-
-    console.log(userData);
-    console.log(auth.currentUser);
 
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
@@ -107,7 +103,7 @@ export const SignIn = () => {
         <ErrorMessage>{errors.password?.message}</ErrorMessage>
       </InputWrapper>
 
-      <CustomLink to={ROUTE.RESET}>Foggot password?</CustomLink>
+      <CustomLink to={ROUTE.FORGOT}>Foggot password?</CustomLink>
       <Button type="submit">Sign in</Button>
     </StyledSignIn>
   );

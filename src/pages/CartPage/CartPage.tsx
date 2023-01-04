@@ -1,4 +1,4 @@
-import { BackArrowButton, CartItem, Title } from "components";
+import { BackArrowButton, CartItem, Title, CartTotalPrice } from "components";
 import {
   decAmount,
   deleteBook,
@@ -10,7 +10,7 @@ import {
 import { StyledCartPage, CartList } from "./styles";
 
 export const CartPage = () => {
-  const { cart, amount } = useAppSelector(getCartBooks);
+  const { cart } = useAppSelector(getCartBooks);
   const dispatch = useAppDispatch();
 
   return (
@@ -23,7 +23,6 @@ export const CartPage = () => {
             <CartItem
               key={book.isbn13}
               book={book}
-              amount={amount}
               incAmount={() => dispatch(incAmount(book.isbn13))}
               decAmount={() => dispatch(decAmount(book.isbn13))}
               deleteBook={() => {
@@ -33,6 +32,7 @@ export const CartPage = () => {
           );
         })}
       </CartList>
+      {cart.length > 0 && <CartTotalPrice />}
     </StyledCartPage>
   );
 };
