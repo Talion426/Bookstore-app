@@ -2,8 +2,7 @@ import { Button } from "components";
 import { useForm } from "react-hook-form";
 import { StyledSignUp, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import { setUser } from "store";
-import { useDispatch } from "react-redux";
+import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 
@@ -15,7 +14,7 @@ interface ISignUp {
 }
 
 export const SignUp = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const {
