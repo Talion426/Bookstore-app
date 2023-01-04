@@ -1,3 +1,10 @@
+import { Reset } from "components";
+import { StyledResetPage } from "./styles";
+
 export const ResetPage = () => {
-  return <div>ResetPage</div>;
+  return (
+    <StyledResetPage>
+      <Reset />
+    </StyledResetPage>
+  );
 };

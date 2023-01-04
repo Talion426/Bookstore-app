@@ -1,3 +1,10 @@
+import { Forgot } from "components";
+import { StyledForgotPage } from "./styles";
+
 export const ForgotPage = () => {
-  return <div>ForgotPage</div>;
+  return (
+    <StyledForgotPage>
+      <Forgot />
+    </StyledForgotPage>
+  );
 };
