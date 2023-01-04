@@ -1,13 +1,13 @@
 import { Button } from "components";
 import { useForm } from "react-hook-form";
-import { StyledSignUp, ErrorMessage, InputWrapper, Label, StyledInput, Title } from "./styles";
+import { StyledReset, ErrorMessage, InputWrapper, Label, StyledInput, Title } from "./styles";
 import { confirmPasswordReset, getAuth } from "firebase/auth";
 import { setUser } from "store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 
-interface ISignUp {
+interface IReset {
   password: string;
   confirmPassword: string;
 }
@@ -28,7 +28,7 @@ export const Reset = () => {
     },
   });
 
-  const handleReset = (userData: ISignUp) => {
+  const handleReset = (userData: IReset) => {
     const { password, confirmPassword } = userData;
     const auth = getAuth();
 
@@ -47,7 +47,7 @@ export const Reset = () => {
   };
 
   return (
-    <StyledSignUp onSubmit={handleSubmit(handleReset)}>
+    <StyledReset onSubmit={handleSubmit(handleReset)}>
       <Title>New password</Title>
 
       <InputWrapper>
@@ -88,6 +88,6 @@ export const Reset = () => {
       </InputWrapper>
 
       <Button type="submit">Set password</Button>
-    </StyledSignUp>
+    </StyledReset>
   );
 };

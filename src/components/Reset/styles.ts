@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
-export const StyledSignUp = styled.form`
+export const StyledReset = styled.form`
   width: 544px;
   padding: 40px 32px;
   margin-bottom: 72px;
