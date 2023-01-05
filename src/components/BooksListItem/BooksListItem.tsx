@@ -19,9 +19,16 @@ interface IProps {
 export const BookListItem = ({ book }: IProps) => {
   const { image, title, subtitle, isbn13, price } = book;
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <BooksListItem>
-      <Link to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })}>
+      <Link to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })} onClick={handleScroll}>
         <ImageWrapper>
           <Image src={image} alt={title} />
         </ImageWrapper>

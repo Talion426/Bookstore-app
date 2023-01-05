@@ -42,6 +42,13 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
     return summary === 1;
   };
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <StyledCartItem>
       <ImageWrapper>
@@ -51,7 +58,9 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
         </DeleteButton>
       </ImageWrapper>
       <Description>
-        <Title to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })}>{title}</Title>
+        <Title to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })} onClick={handleScroll}>
+          {title}
+        </Title>
         <Subtitle>{subtitle}</Subtitle>
         <ButtonsWrapper>
           <Button onClick={handleDecAmount} disabled={handleSummary()}>

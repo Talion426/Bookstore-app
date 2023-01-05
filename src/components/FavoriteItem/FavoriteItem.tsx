@@ -23,6 +23,13 @@ interface IProps {
 export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
   const { image, title, subtitle, price, rating, isbn13 } = book;
 
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <StyledFavoriteItem>
       <ImageWrapper>
@@ -31,7 +38,7 @@ export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
           <HeartIcon />
         </HeartButton>
       </ImageWrapper>
-      <Description to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })}>
+      <Description to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })} onClick={handleScroll}>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
         <Popularity>
