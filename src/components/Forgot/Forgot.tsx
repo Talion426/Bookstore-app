@@ -15,17 +15,16 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getUser, useAppSelector } from "store";
 import { ROUTE } from "router";
+import { useToggle } from "hooks";
 
 interface IForgot {
   email: string;
 }
 
 export const Forgot = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { email } = useAppSelector(getUser);
 
-  const isSent = false;
+  const [isSent, setSent] = useToggle(false);
 
   const {
     register,
@@ -43,7 +42,7 @@ export const Forgot = () => {
 
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("Good");
+        setSent();
       })
       .catch(() => alert("Invalid email!"));
   };
