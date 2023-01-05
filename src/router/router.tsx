@@ -4,6 +4,7 @@ import {
   AccountPage,
   BookPage,
   CartPage,
+  ErrorPage,
   FavoritesPage,
   ForgotPage,
   HomePage,
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
       <Route path={ROUTE.SEARCH} element={<SearchPage />} />
       <Route path={ROUTE.BOOK} element={<BookPage />} />
       <Route path={ROUTE.SIGN} element={<SignPage />} />
+      <Route path="*" element={<ErrorPage />} />
 
       <Route element={<RequareAuth />}>
         <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
