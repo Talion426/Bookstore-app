@@ -6,6 +6,7 @@ import {
   ImageWrapper,
   Image,
   AddFavoriteButton,
+  Rewiew,
 } from "./styles";
 import { HeartIcon } from "assets";
 import { getFavoriteBooks, useAppSelector } from "store";
@@ -19,7 +20,7 @@ interface IProps {
 }
 
 export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
-  const { title, image, isbn13 } = book;
+  const { title, image, isbn13, url } = book;
   const { favorite } = useAppSelector(getFavoriteBooks);
 
   const handleToggleToCart = () => {
@@ -56,6 +57,9 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
           <Button type="button" onClick={handleToggleToCart}>
             Add to cart
           </Button>
+          <Rewiew href={url} target="_blank">
+            Preview book
+          </Rewiew>
         </DescriptionWrapper>
       </StyledBookDetails>
       <DetailsTabs book={book} />

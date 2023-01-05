@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Media, Color } from "ui";
+import { Media, Color, Typography } from "ui";
 
 export const StyledBookDetails = styled.div`
   display: flex;
@@ -82,4 +82,19 @@ export const AddFavoriteButton = styled.button`
   ${Media.MD} {
     padding: 12px 12px 8px;
   }
+`;
+
+export const Rewiew = styled.a`
+  position: relative;
+  top: 0;
+  left: calc(50% - 60px);
+
+  display: inline-block;
+
+  width: 120px;
+  margin-top: 40px;
+
+  ${Typography.B1};
+  color: ${Color.Primary};
+  text-align: center;
 `;
