@@ -1,13 +1,5 @@
 import { HeartIcon, ShoppingBagIcon, AccountIcon } from "assets";
-import {
-  NavItem,
-  HeartNavItem,
-  ShoppingBagNavItem,
-  StyledNav,
-  Text,
-  Amount,
-  IconContainer,
-} from "./styles";
+import { NavItem, ShoppingBagNavItem, StyledNav, Text, Amount, IconContainer } from "./styles";
 import { ROUTE } from "router";
 import { useWindowSize } from "hooks";
 import { getCartBooks, getFavoriteBooks, useAppSelector } from "store";
@@ -24,7 +16,7 @@ export const HeaderNavigation = () => {
 
   return (
     <StyledNav>
-      <HeartNavItem to={ROUTE.FAVORITES}>
+      <NavItem to={ROUTE.FAVORITES}>
         {isMobile ? (
           <IconContainer>
             <HeartIcon />
@@ -33,7 +25,7 @@ export const HeaderNavigation = () => {
         ) : (
           <Text>Favorites</Text>
         )}
-      </HeartNavItem>
+      </NavItem>
       <ShoppingBagNavItem to={ROUTE.CART}>
         {isMobile ? (
           <IconContainer>

@@ -37,23 +37,6 @@ export const NavItem = styled(NavLink)`
   }
 `;
 
-export const HeartNavItem = styled(NavLink)`
-  position: relative;
-
-  display: block;
-
-  svg {
-    path {
-      stroke: ${Color.Primary};
-    }
-  }
-
-  ${Media.LG} {
-    width: 100%;
-    padding: 10px 0;
-  }
-`;
-
 export const ShoppingBagNavItem = styled(NavLink)`
   position: relative;
 
