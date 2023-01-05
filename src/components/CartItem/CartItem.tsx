@@ -13,6 +13,8 @@ import {
   DeleteButton,
 } from "./styles";
 import { ICartItem } from "types";
+import { ROUTE } from "router";
+import { generatePath } from "react-router-dom";
 
 interface IProps {
   book: ICartItem;
@@ -22,7 +24,7 @@ interface IProps {
 }
 
 export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => {
-  const { image, title, subtitle, price, summary } = book;
+  const { image, title, subtitle, price, summary, isbn13 } = book;
 
   const handleDeleteBook = () => {
     deleteBook();
@@ -49,7 +51,7 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
         </DeleteButton>
       </ImageWrapper>
       <Description>
-        <Title>{title}</Title>
+        <Title to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })}>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
         <ButtonsWrapper>
           <Button onClick={handleDecAmount} disabled={handleSummary()}>

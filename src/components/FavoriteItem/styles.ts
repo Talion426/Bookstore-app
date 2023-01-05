@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
@@ -55,7 +56,7 @@ export const Image = styled.img`
   height: 100%;
 `;
 
-export const Description = styled.div`
+export const Description = styled(Link)`
   flex: 1 0 auto;
 
   ${Media.LG} {
@@ -81,7 +82,7 @@ export const Subtitle = styled.p`
   ${Typography.B1};
   color: ${Color.Secondary};
 
-  ${Media.EL}{
+  ${Media.EL} {
     max-width: 400px;
   }
 `;

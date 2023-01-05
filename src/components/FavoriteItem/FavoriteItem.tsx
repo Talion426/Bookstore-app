@@ -1,5 +1,7 @@
 import { HeartIcon } from "assets";
 import { StarsRating } from "components";
+import { generatePath } from "react-router-dom";
+import { ROUTE } from "router";
 import { IBookDetails } from "types";
 import {
   Subtitle,
@@ -19,7 +21,7 @@ interface IProps {
 }
 
 export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
-  const { image, title, subtitle, price, rating } = book;
+  const { image, title, subtitle, price, rating, isbn13 } = book;
 
   return (
     <StyledFavoriteItem>
@@ -29,7 +31,7 @@ export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
           <HeartIcon />
         </HeartButton>
       </ImageWrapper>
-      <Description>
+      <Description to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })}>
         <Title>{title}</Title>
         <Subtitle>{subtitle}</Subtitle>
         <Popularity>

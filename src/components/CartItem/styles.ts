@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
@@ -72,7 +73,7 @@ export const Description = styled.div`
   }
 `;
 
-export const Title = styled.h3`
+export const Title = styled(Link)`
   margin-bottom: 8px;
 
   ${Typography.H3};
