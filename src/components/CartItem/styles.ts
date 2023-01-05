@@ -79,10 +79,15 @@ export const Title = styled.h3`
 `;
 
 export const Subtitle = styled.p`
+  max-width: 520px;
   margin-bottom: 24px;
 
   ${Typography.B1};
   color: ${Color.Secondary};
+
+  ${Media.EL} {
+    max-width: 400px;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`
