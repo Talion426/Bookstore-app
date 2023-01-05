@@ -7,7 +7,6 @@ import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 
 interface ISingIn {
-  name: string;
   email: string;
   password: string;
 }
@@ -22,14 +21,13 @@ export const SignIn = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      name: "",
       email: "",
       password: "",
     },
   });
 
   const handleSignIn = (userData: ISingIn) => {
-    const { name, email, password } = userData;
+    const { email, password } = userData;
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -38,7 +36,6 @@ export const SignIn = () => {
           setUser({
             email: user.email,
             id: user.uid,
-            name: name,
             password: password,
             isAuth: true,
           }),
@@ -50,21 +47,6 @@ export const SignIn = () => {
 
   return (
     <StyledSignIn onSubmit={handleSubmit(handleSignIn)}>
-      <InputWrapper>
-        <Label>Name</Label>
-        <StyledInput
-          type="text"
-          placeholder="Your name"
-          {...register("name", {
-            required: {
-              value: true,
-              message: "Name is required field!",
-            },
-          })}
-        />
-        <ErrorMessage>{errors.name?.message}</ErrorMessage>
-      </InputWrapper>
-
       <InputWrapper>
         <Label>Email</Label>
         <StyledInput

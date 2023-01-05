@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Typography, Color } from "ui";
+import { Typography, Color, Media } from "ui";
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -14,6 +14,7 @@ export const Label = styled.label`
 `;
 
 export const StyledInput = styled.input`
+  max-width: 544px;
   height: 56px;
   padding: 10px 20px;
   margin-bottom: 20px;
@@ -29,5 +30,9 @@ export const StyledInput = styled.input`
 
   &:focus {
     border: 2px solid ${Color.Gray};
+  }
+
+  ${Media.EL} {
+    max-width: 456px;
   }
 `;

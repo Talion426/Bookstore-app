@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { Color, Typography, Media } from "ui";
 
+export const StyledAccount = styled.form`
+  flex: 1 0 auto;
+`;
+
 export const ProfileWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -14,6 +18,12 @@ export const ProfileWrapper = styled.div`
 `;
 
 export const PasswordWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  column-gap: 32px;
+`;
+
+export const NewPasswordWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 32px;
@@ -39,4 +49,44 @@ export const ButtonsWrapper = styled.div`
   margin: 72px 0;
 
   border-top: 1px solid ${Color.Gray};
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledInput = styled.input`
+  max-width: 544px;
+  height: 56px;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+
+  ${Typography.B1}
+
+  background: ${Color.Primary_Background};
+  border: 1px solid ${Color.Gray};
+
+  &::placeholder {
+    color: ${Color.Secondary};
+    text-transform: capitalize;
+  }
+
+  ${Media.EL} {
+    max-width: 456px;
+  }
+`;
+
+export const Label = styled.label`
+  padding-bottom: 10px;
+
+  ${Typography.B2};
+  color: ${Color.Primary};
+`;
+
+export const ErrorMessage = styled.p`
+  margin-bottom: 10px;
+
+  ${Typography.B1}
+  color: ${Color.Red};
 `;
