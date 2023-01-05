@@ -37,7 +37,26 @@ export const NavItem = styled(NavLink)`
   }
 `;
 
+export const HeartNavItem = styled(NavLink)`
+  position: relative;
+
+  display: block;
+
+  svg {
+    path {
+      stroke: ${Color.Primary};
+    }
+  }
+
+  ${Media.LG} {
+    width: 100%;
+    padding: 10px 0;
+  }
+`;
+
 export const ShoppingBagNavItem = styled(NavLink)`
+  position: relative;
+
   display: block;
 
   svg {
@@ -54,4 +73,27 @@ export const ShoppingBagNavItem = styled(NavLink)`
 
 export const Text = styled.p`
   ${Typography.H2}
+`;
+
+export const IconContainer = styled.div`
+  position: relative;
+`;
+
+export const Amount = styled.span`
+  position: absolute;
+  top: -7px;
+  right: -7px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 16px;
+  height: 16px;
+
+  ${Typography.S1}
+  font-size: 14px;
+
+  background: ${Color.Secondary_Background};
+  border-radius: 10px;
 `;
