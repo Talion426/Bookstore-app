@@ -70,7 +70,7 @@ export const CompleteMessage = styled.p`
 
   overflow: hidden;
 
-  background: ${Color.Purple};
+  background: ${Color.Secondary_Background};
 
   span {
     ${Typography.B2}
