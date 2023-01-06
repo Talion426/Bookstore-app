@@ -1,5 +1,6 @@
 import { HeartIcon } from "assets";
-import { StarsRating } from "components";
+import { Notice, StarsRating } from "components";
+import { useToggle } from "hooks";
 import { generatePath } from "react-router-dom";
 import { ROUTE } from "router";
 import { IBookDetails } from "types";
@@ -30,12 +31,20 @@ export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
     });
   };
 
+  const [isOpenModal, toggleModal] = useToggle();
+
+  const handleModal = () => {
+    toggleModal();
+
+    setTimeout(toggleModal, 3000);
+  };
+
   return (
     <StyledFavoriteItem>
       <ImageWrapper>
         <Image src={image} alt={title} />
         <HeartButton onClick={deleteFavoriteBook}>
-          <HeartIcon />
+          <HeartIcon  />
         </HeartButton>
       </ImageWrapper>
       <Description to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })} onClick={handleScroll}>
@@ -46,6 +55,8 @@ export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
           <StarsRating stars={rating} />
         </Popularity>
       </Description>
+
+      {isOpenModal && <Notice>Book removed from favorites</Notice>}
     </StyledFavoriteItem>
   );
 };

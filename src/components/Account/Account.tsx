@@ -1,4 +1,4 @@
-import { Button, Input } from "components";
+import { Button, Input, Notice } from "components";
 import { removeUser, setUser, useAppDispatch } from "store";
 import { Color } from "ui";
 import {
@@ -15,6 +15,7 @@ import {
 } from "./styles";
 import { useForm } from "react-hook-form";
 import { getAuth, updateProfile, updateEmail, updatePassword } from "firebase/auth";
+import { useToggle } from "hooks";
 
 interface IUserData {
   name: string;
@@ -54,6 +55,14 @@ export const Account = ({ email, name, password }: IProps) => {
     },
   });
 
+  const [isOpenModal, toggleModal] = useToggle();
+
+  const handleModal = () => {
+    toggleModal();
+
+    setTimeout(toggleModal, 3000);
+  };
+
   const handleUserAccount = (userData: IUserData) => {
     const auth = getAuth();
     const user = auth.currentUser;
@@ -68,6 +77,9 @@ export const Account = ({ email, name, password }: IProps) => {
               password: userData.newPassword,
             }),
           );
+        })
+        .then(() => {
+          handleModal();
         })
         .catch((error) => {
           alert(error.message);
@@ -163,6 +175,8 @@ export const Account = ({ email, name, password }: IProps) => {
           Log out
         </Button>
       </ButtonsWrapper>
+
+      {isOpenModal && <Notice>Password changed</Notice>}
     </StyledAccount>
   );
 };

@@ -1,4 +1,4 @@
-import { BackArrowButton, Button, Description, Title, DetailsTabs } from "components";
+import { BackArrowButton, Button, Description, Title, DetailsTabs, Notice } from "components";
 import { IBookDetails } from "types";
 import {
   StyledBookDetails,
@@ -11,6 +11,7 @@ import {
 import { HeartIcon } from "assets";
 import { getFavoriteBooks, useAppSelector } from "store";
 import { Color } from "ui";
+import { useToggle } from "hooks";
 
 interface IProps {
   book: IBookDetails;
@@ -35,6 +36,21 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
     if (favorite.length > 0) {
       return favorite.find((item) => item.isbn13 === isbn13);
     } else return false;
+  };
+
+  const [isOpenFavoriteModal, toggleFavoriteModal] = useToggle();
+  const [isOpenCartModal, toggleCartModal] = useToggle();
+
+  const handleFavoriteModal = () => {
+    toggleFavoriteModal();
+
+    setTimeout(toggleFavoriteModal, 3000);
+  };
+
+  const handleCartModal = () => {
+    toggleCartModal();
+
+    setTimeout(toggleCartModal, 3000);
   };
 
   return (
@@ -63,6 +79,9 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
         </DescriptionWrapper>
       </StyledBookDetails>
       <DetailsTabs book={book} />
+
+      {isOpenFavoriteModal && <Notice>Book added to favorites</Notice>}
+      {isOpenCartModal && <Notice>Book added to cart</Notice>}
     </section>
   );
 };

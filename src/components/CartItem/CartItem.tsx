@@ -15,6 +15,8 @@ import {
 import { ICartItem } from "types";
 import { ROUTE } from "router";
 import { generatePath } from "react-router-dom";
+import { Notice } from "components";
+import { useToggle } from "hooks";
 
 interface IProps {
   book: ICartItem;
@@ -49,6 +51,14 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
     });
   };
 
+  const [isOpenModal, toggleModal] = useToggle();
+
+  const handleModal = () => {
+    toggleModal();
+
+    setTimeout(toggleModal, 3000);
+  };
+
   return (
     <StyledCartItem>
       <ImageWrapper>
@@ -73,6 +83,8 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
         </ButtonsWrapper>
       </Description>
       <Price>{price}</Price>
+
+      {isOpenModal && <Notice>Book removed from cart</Notice>}
     </StyledCartItem>
   );
 };

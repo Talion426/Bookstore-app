@@ -1,4 +1,4 @@
-import { Button } from "components";
+import { Button, Notice } from "components";
 import { useForm } from "react-hook-form";
 import { StyledReset, ErrorMessage, InputWrapper, Label, StyledInput, Title } from "./styles";
 import { confirmPasswordReset, getAuth } from "firebase/auth";
@@ -6,6 +6,7 @@ import { setUser } from "store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
+import { useToggle } from "hooks";
 
 interface IReset {
   password: string;
@@ -28,6 +29,14 @@ export const Reset = () => {
     },
   });
 
+  const [isOpenModal, toggleModal] = useToggle();
+
+  const handleModal = () => {
+    toggleModal();
+
+    setTimeout(toggleModal, 3000);
+  };
+
   const handleReset = (userData: IReset) => {
     const { password, confirmPassword } = userData;
     const auth = getAuth();
@@ -40,7 +49,9 @@ export const Reset = () => {
             isAuth: true,
           }),
         );
-
+      })
+      .then(() => {
+        handleModal();
         navigate(ROUTE.HOME);
       })
       .catch(() => alert("Error!"));
@@ -88,6 +99,8 @@ export const Reset = () => {
       </InputWrapper>
 
       <Button type="submit">Set password</Button>
+
+      {isOpenModal && <Notice>Password changed</Notice>}
     </StyledReset>
   );
 };

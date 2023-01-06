@@ -1,10 +1,11 @@
-import { Button } from "components";
+import { Button, Notice } from "components";
 import { useForm } from "react-hook-form";
 import { StyledSignUp, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
+import { useToggle } from "hooks";
 
 interface ISignUp {
   name: string;
@@ -31,6 +32,14 @@ export const SignUp = () => {
     },
   });
 
+  const [isOpenModal, toggleModal] = useToggle();
+
+  const handleModal = () => {
+    toggleModal();
+
+    setTimeout(toggleModal, 3000);
+  };
+
   const handleSignUp = (userData: ISignUp) => {
     const { email, password, name } = userData;
     const auth = getAuth();
@@ -46,7 +55,6 @@ export const SignUp = () => {
             isAuth: true,
           }),
         );
-        navigate(ROUTE.HOME);
       })
       .then(() => {
         const currentUser = auth.currentUser;
@@ -55,6 +63,10 @@ export const SignUp = () => {
             displayName: name,
           });
         }
+      })
+      .then(() => {
+        handleModal();
+        navigate(ROUTE.HOME);
       })
       .catch(() => alert("User existing!"));
   };
@@ -133,6 +145,8 @@ export const SignUp = () => {
       </InputWrapper>
 
       <Button type="submit">Sign up</Button>
+
+      {isOpenModal && <Notice>You have registered a new account</Notice>}
     </StyledSignUp>
   );
 };

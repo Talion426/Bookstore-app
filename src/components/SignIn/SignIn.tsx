@@ -1,10 +1,11 @@
-import { Button } from "components";
+import { Button, Notice } from "components";
 import { useForm } from "react-hook-form";
 import { ROUTE } from "router";
 import { StyledSignIn, CustomLink, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
+import { useToggle } from "hooks";
 
 interface ISingIn {
   email: string;
@@ -26,6 +27,14 @@ export const SignIn = () => {
     },
   });
 
+  const [isOpenModal, toggleModal] = useToggle();
+
+  const handleModal = () => {
+    toggleModal();
+
+    setTimeout(toggleModal, 3000);
+  };
+
   const handleSignIn = (userData: ISingIn) => {
     const { email, password } = userData;
     const auth = getAuth();
@@ -40,6 +49,9 @@ export const SignIn = () => {
             isAuth: true,
           }),
         );
+      })
+      .then(() => {
+        handleModal();
         navigate(ROUTE.HOME);
       })
       .catch(() => alert("Invalid user!"));
@@ -87,6 +99,8 @@ export const SignIn = () => {
 
       <CustomLink to={ROUTE.FORGOT}>Foggot password?</CustomLink>
       <Button type="submit">Sign in</Button>
+
+      {isOpenModal && <Notice>You are logged in</Notice>}
     </StyledSignIn>
   );
 };
