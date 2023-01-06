@@ -31,6 +31,8 @@ export const BookPage = () => {
     } else return false;
   };
 
+  const cartItem = { ...result, summary: 1 };
+
   return (
     <StyledBookPage>
       {isLoading && <Title text="Loading..." />}
@@ -40,7 +42,7 @@ export const BookPage = () => {
           <BookDetails
             book={result}
             amount={amount}
-            addToCart={() => dispatch(addBook(result))}
+            addToCart={() => dispatch(addBook(cartItem))}
             handleToFavorite={() => {
               findFavorite()
                 ? dispatch(deleteFavorite(result.isbn13))

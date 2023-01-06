@@ -4,7 +4,11 @@ import { ROUTE } from "router";
 import { useWindowSize } from "hooks";
 import { getCartBooks, getFavoriteBooks, useAppSelector } from "store";
 
-export const HeaderNavigation = () => {
+interface IProps {
+  closeBurger: () => void;
+}
+
+export const HeaderNavigation = ({ closeBurger }: IProps) => {
   const { width = 0 } = useWindowSize();
   const isMobile = width > 992;
 
@@ -23,7 +27,7 @@ export const HeaderNavigation = () => {
             {favoriteLength > 0 && <Amount>{favoriteLength}</Amount>}
           </IconContainer>
         ) : (
-          <Text>Favorites</Text>
+          <Text onClick={closeBurger}>Favorites</Text>
         )}
       </NavItem>
       <ShoppingBagNavItem to={ROUTE.CART}>
@@ -33,10 +37,12 @@ export const HeaderNavigation = () => {
             {cartLength > 0 && <Amount>{cartLength}</Amount>}
           </IconContainer>
         ) : (
-          <Text>Cart</Text>
+          <Text onClick={closeBurger}>Cart</Text>
         )}
       </ShoppingBagNavItem>
-      <NavItem to={ROUTE.ACCOUNT}>{isMobile ? <AccountIcon /> : <Text>Account</Text>}</NavItem>
+      <NavItem to={ROUTE.ACCOUNT}>
+        {isMobile ? <AccountIcon /> : <Text onClick={closeBurger}>Account</Text>}
+      </NavItem>
     </StyledNav>
   );
 };

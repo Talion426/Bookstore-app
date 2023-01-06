@@ -14,12 +14,16 @@ export const Header = () => {
     document.documentElement.setAttribute("overflow", String(isOpen));
   }, [isOpen]);
 
+  const ToggleIsOpen = () => {
+    return isOpen && toggleNav();
+  };
+
   return (
     <StyledHeader>
-      <LogoWrapper to={ROUTE.HOME}>
+      <LogoWrapper to={ROUTE.HOME} onClick={ToggleIsOpen}>
         <LogoIcon />
       </LogoWrapper>
-      <HeaderControl isOpen={isOpen} />
+      <HeaderControl isOpen={isOpen} closeBurger={toggleNav} />
       {width < 993 && (
         <BurgerMenuNavItem type="button" onClick={toggleNav}>
           {isOpen ? <CancelIcon fill={Color.Primary} /> : <BurgerMenuIcon fill={Color.Primary} />}
