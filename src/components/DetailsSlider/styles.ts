@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Typography, Color, Media } from "ui";
+import { Typography, Media } from "ui";
 
 export const StyledDetailsSlider = styled.section`
   position: relative;
@@ -13,6 +13,10 @@ export const StyledDetailsSlider = styled.section`
     width: 34px;
     height: 34px;
     padding: 5px;
+
+    ${Media.SM} {
+      top: -68px;
+    }
   }
   .slick-next {
     top: -80px;
@@ -21,6 +25,10 @@ export const StyledDetailsSlider = styled.section`
     width: 34px;
     height: 34px;
     padding: 5px;
+
+    ${Media.SM} {
+      top: -68px;
+    }
   }
 `;
 export const Title = styled.h2`

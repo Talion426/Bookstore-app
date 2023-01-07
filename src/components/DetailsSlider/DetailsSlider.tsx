@@ -4,8 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 import { StyledDetailsSlider, Title } from "./styles";
 import { NextArrowIcon, PrevArrowIcon } from "assets";
 import { Color } from "ui";
+import { IBook } from "types";
+import { BookListItem } from "components";
 
-export const DetailsSlider = () => {
+interface IProps {
+  title: string;
+  books: IBook[];
+}
+
+export const DetailsSlider = ({ title, books }: IProps) => {
   const settings = {
     dots: false,
     nextArrow: <NextArrowIcon fill={Color.Primary} />,
@@ -14,18 +21,27 @@ export const DetailsSlider = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <StyledDetailsSlider>
-      <Title>Similar Books</Title>
+      <Title>{title}</Title>
       <Slider {...settings}>
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
-        <div>6</div>
+        {books.map((book) => (
+          <BookListItem key={book.isbn13} book={book} />
+        ))}
       </Slider>
     </StyledDetailsSlider>
   );

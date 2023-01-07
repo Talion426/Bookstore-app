@@ -1,10 +1,23 @@
-import { BackArrowButton, FavoriteItem, Title } from "components";
-import { deleteFavorite, getFavoriteBooks, useAppDispatch, useAppSelector } from "store";
+import { BackArrowButton, DetailsSlider, FavoriteItem, Title } from "components";
+import { useEffect } from "react";
+import {
+  deleteFavorite,
+  fetchNewBooks,
+  getFavoriteBooks,
+  getNewBooks,
+  useAppDispatch,
+  useAppSelector,
+} from "store";
 import { StyledFavoritesPage, FavoriteList } from "./styles";
 
 export const FavoritesPage = () => {
-  const { favorite } = useAppSelector(getFavoriteBooks);
   const dispatch = useAppDispatch();
+  const { favorite } = useAppSelector(getFavoriteBooks);
+  const { isLoading, result, error } = useAppSelector(getNewBooks);
+
+  useEffect(() => {
+    dispatch(fetchNewBooks());
+  }, [dispatch]);
 
   return (
     <StyledFavoritesPage>
@@ -21,6 +34,7 @@ export const FavoritesPage = () => {
           );
         })}
       </FavoriteList>
+      <DetailsSlider title="New Books" books={result} />
     </StyledFavoritesPage>
   );
 };

@@ -15,4 +15,6 @@ export const FavoriteList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 48px;
+
+  margin-bottom: 72px;
 `;
