@@ -30,6 +30,9 @@ import { Reset } from "./Reset/Reset";
 import { CartTotalPrice } from "./CartTotalPrice/CartTotalPrice";
 import { Portal } from "./Portal/Portal";
 import { Notice } from "./Notice/Notice";
+import { SearchModal } from "./SearchModal/SearchModal";
+import { SearchModalList } from "./SearchModalList/SearchModalList";
+import { SearchModalItem } from "./SearchModalItem/SearchModalItem";
 //import {} from ".//";
 
 export {
@@ -65,4 +68,7 @@ export {
   CartTotalPrice,
   Portal,
   Notice,
+  SearchModal,
+  SearchModalList,
+  SearchModalItem,
 };

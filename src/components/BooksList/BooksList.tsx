@@ -8,12 +8,10 @@ interface IProps {
 
 export const BooksList = ({ books }: IProps) => {
   return (
-    <>
-      <StyledBooksList>
-        {books.map((book) => (
-          <BookListItem key={book.isbn13} book={book} />
-        ))}
-      </StyledBooksList>
-    </>
+    <StyledBooksList>
+      {books.map((book) => (
+        <BookListItem key={book.isbn13} book={book} />
+      ))}
+    </StyledBooksList>
   );
 };

@@ -1,6 +1,7 @@
 import { SearchIcon } from "assets";
-import { Button, HeaderNavigation, ThemeChanger } from "components";
-import { useInput, useWindowSize } from "hooks";
+import { Button, HeaderNavigation, SearchModal, ThemeChanger } from "components";
+import { useDebounce, useInput, useToggle, useWindowSize } from "hooks";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 import { getUser, removeUser, useAppDispatch, useAppSelector } from "store";
@@ -28,6 +29,11 @@ export const HeaderControl = ({ isOpen, closeBurger }: IProps) => {
   const handleSearch = () => {
     navigate(`search/${value}/1`);
   };
+
+  const debounceSearch = useDebounce(value, 300);
+  const [isOpenSearch, toggleSearch] = useToggle();
+
+  useEffect(() => (debounceSearch ? toggleSearch() : console.log(1)), [debounceSearch]);
 
   return (
     <StyledHeaderControl isOpen={isOpen}>
@@ -65,6 +71,8 @@ export const HeaderControl = ({ isOpen, closeBurger }: IProps) => {
           )}
         </>
       )}
+
+      {isOpenSearch && <SearchModal value={value} />}
     </StyledHeaderControl>
   );
 };
