@@ -60,7 +60,12 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
       <StyledBookDetails>
         <ImageWrapper>
           <Image src={image} alt={title} />
-          <AddFavoriteButton onClick={handleToggleToFavorite}>
+          <AddFavoriteButton
+            onClick={() => {
+              handleToggleToFavorite();
+              handleFavoriteModal();
+            }}
+          >
             {findFavorite() ? (
               <HeartIcon fill={Color.Red} stroke={Color.Red} />
             ) : (
@@ -70,7 +75,13 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
         </ImageWrapper>
         <DescriptionWrapper>
           <Description book={book} />
-          <Button type="button" onClick={handleToggleToCart}>
+          <Button
+            type="button"
+            onClick={() => {
+              handleToggleToCart();
+              handleCartModal();
+            }}
+          >
             Add to cart
           </Button>
           <Rewiew href={url} target="_blank">

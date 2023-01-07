@@ -17,6 +17,10 @@ export const Reset = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const homeNavigate = () => {
+    navigate(ROUTE.HOME);
+  };
+
   const {
     register,
     handleSubmit,
@@ -52,7 +56,9 @@ export const Reset = () => {
       })
       .then(() => {
         handleModal();
-        navigate(ROUTE.HOME);
+      })
+      .then(() => {
+        setTimeout(homeNavigate, 3000);
       })
       .catch(() => alert("Error!"));
   };

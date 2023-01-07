@@ -16,6 +16,10 @@ export const SignIn = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const homeNavigate = () => {
+    navigate(ROUTE.HOME);
+  };
+
   const {
     register,
     handleSubmit,
@@ -52,7 +56,9 @@ export const SignIn = () => {
       })
       .then(() => {
         handleModal();
-        navigate(ROUTE.HOME);
+      })
+      .then(() => {
+        setTimeout(homeNavigate, 3000);
       })
       .catch(() => alert("Invalid user!"));
   };

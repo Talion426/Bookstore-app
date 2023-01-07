@@ -14,7 +14,7 @@ import {
   ErrorMessage,
 } from "./styles";
 import { useForm } from "react-hook-form";
-import { getAuth, updateProfile, updateEmail, updatePassword } from "firebase/auth";
+import { getAuth, updatePassword } from "firebase/auth";
 import { useToggle } from "hooks";
 
 interface IUserData {
