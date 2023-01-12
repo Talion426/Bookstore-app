@@ -4,13 +4,13 @@ import { restBooksAPI } from "services";
 import { IResponseSearch, ISearchResult } from "types";
 
 interface ISearchBook {
-  result: IResponseSearch;
+  results: IResponseSearch;
   isLoading: boolean;
   error: null | string;
 }
 
 const initialState: ISearchBook = {
-  result: {} as IResponseSearch,
+  results: {} as IResponseSearch,
   isLoading: false,
   error: null,
 };
@@ -24,28 +24,30 @@ export const fetchSearchBooks = createAsyncThunk<
     return await restBooksAPI.searchBooks(params);
   } catch (error) {
     const errorResponse = error as AxiosError;
+
     return rejectWithValue(errorResponse.message);
   }
 });
 
 const searchBooksSlice = createSlice({
-  name: "searchBooks",
+  name: "getSearchBooks",
   initialState,
   reducers: {},
   extraReducers(builder) {
     builder.addCase(fetchSearchBooks.pending, (state) => {
       state.isLoading = true;
-      state.error = null;
     });
+
     builder.addCase(fetchSearchBooks.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.result.books = payload.books;
-      state.result.page = payload.page;
-      state.result.total = payload.total;
+      state.results.books = payload.books;
+      state.results.page = payload.page;
+      state.results.total = payload.total;
     });
+
     builder.addCase(fetchSearchBooks.rejected, (state, { payload }) => {
       if (payload) {
-        state.isLoading = true;
+        state.isLoading = false;
         state.error = payload;
       }
     });

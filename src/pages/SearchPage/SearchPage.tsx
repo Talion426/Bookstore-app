@@ -5,10 +5,11 @@ import { fetchSearchBooks, getSearchBooks, useAppDispatch, useAppSelector } from
 import { SearchBooksWrapper, Subtitle } from "./styles";
 
 export const SearchPage = () => {
-  const dispatch = useAppDispatch();
   const { page, searchValue } = useParams();
-  const { result, isLoading, error } = useAppSelector(getSearchBooks);
-  const { books, total } = result;
+  const { results, isLoading } = useAppSelector(getSearchBooks);
+  const dispatch = useAppDispatch();
+
+  const { books, total } = results;
 
   const ITEMS_PER_PAGE = 10;
   const pageCount = Math.ceil(+total / ITEMS_PER_PAGE);
@@ -39,19 +40,17 @@ export const SearchPage = () => {
   return (
     <SearchBooksWrapper>
       {isLoading && <Title text="Loading..." />}
-      {error && <p>{error}</p>}
-      {books && books.length === 0 && (
-        <>
-          <BackArrowButton />
-          <Title text="No results" />
-        </>
-      )}
-      {books && books.length > 0 && (
+      {books && books.length > 0 ? (
         <>
           <Title text={`'${searchValue}' search results`} />
           <Subtitle>{`Found ${total} books`}</Subtitle>
-          {<BooksList books={books} />}
+          <BooksList books={books} />
           <Pagination pageCount={pageCount} PageClick={handlePageClick} />
+        </>
+      ) : (
+        <>
+          <BackArrowButton />
+          <Title text="No results" />
         </>
       )}
     </SearchBooksWrapper>

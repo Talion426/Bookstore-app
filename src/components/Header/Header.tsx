@@ -23,7 +23,7 @@ export const Header = () => {
       <LogoWrapper to={ROUTE.HOME} onClick={ToggleIsOpen}>
         <LogoIcon />
       </LogoWrapper>
-      <HeaderControl isOpen={isOpen} closeBurger={toggleNav} />
+      <HeaderControl isOpen={isOpen} closeBurger={ToggleIsOpen} />
       {width < 993 && (
         <BurgerMenuNavItem type="button" onClick={toggleNav}>
           {isOpen ? <CancelIcon fill={Color.Primary} /> : <BurgerMenuIcon fill={Color.Primary} />}

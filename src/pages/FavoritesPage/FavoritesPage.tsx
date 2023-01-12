@@ -11,9 +11,9 @@ import {
 import { StyledFavoritesPage, FavoriteList } from "./styles";
 
 export const FavoritesPage = () => {
-  const dispatch = useAppDispatch();
   const { favorite } = useAppSelector(getFavoriteBooks);
-  const { isLoading, result, error } = useAppSelector(getNewBooks);
+  const { results } = useAppSelector(getNewBooks);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchNewBooks());
@@ -34,7 +34,7 @@ export const FavoritesPage = () => {
           );
         })}
       </FavoriteList>
-      <DetailsSlider title="New Books" books={result} />
+      <DetailsSlider title="New Books" books={results} />
     </StyledFavoritesPage>
   );
 };

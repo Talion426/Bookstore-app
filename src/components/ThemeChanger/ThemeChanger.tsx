@@ -7,6 +7,7 @@ interface IProps {
 
 export const ThemeChanger = ({ type }: IProps) => {
   const [theme, setTheme] = useState("light");
+
   const handleTheme = () => {
     setTheme((theme) => (theme === "light" ? "dark" : "light"));
   };

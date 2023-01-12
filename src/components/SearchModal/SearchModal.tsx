@@ -12,8 +12,8 @@ interface IProps {
 export const SearchModal = ({ value }: IProps) => {
   const dispatch = useAppDispatch();
   const { searchValue } = useParams();
-  const { result } = useAppSelector(getSearchBooks);
-  const { books } = result;
+  const { results } = useAppSelector(getSearchBooks);
+  const { books } = results;
   const navigate = useNavigate();
 
   useEffect(() => {

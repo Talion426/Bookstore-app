@@ -7,7 +7,7 @@ export interface IBook {
   url: string;
 }
 
-export interface IResponseNewBooks {
+export interface INewBooks {
   error: string;
   total: string;
   books: IBook[];
@@ -50,9 +50,6 @@ export interface ICartItem {
   price: string;
   image: string;
   url: string;
-  pdf?: {
-    [key: string]: string;
-  };
   summary: number;
 }
 
@@ -61,11 +58,6 @@ export interface IResponseSearch {
   total: string;
   page: string;
   books: IBook[];
-}
-
-export interface ISearchParams {
-  name: string;
-  page: string;
 }
 
 export interface ISearchResult {

@@ -22,6 +22,7 @@ const favoriteSlice = createSlice({
         });
       }
     },
+
     deleteFavorite: (state, action: PayloadAction<string>) => {
       state.favorite = state.favorite.filter((book) => {
         return book.isbn13 !== action.payload;

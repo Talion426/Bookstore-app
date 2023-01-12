@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { Color } from "./colors";
+import { Color } from "ui";
 
 const H1 = css`
   font-family: "Bebas Neue";

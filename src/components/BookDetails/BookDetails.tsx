@@ -35,7 +35,9 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
   const findFavorite = () => {
     if (favorite.length > 0) {
       return favorite.find((item) => item.isbn13 === isbn13);
-    } else return false;
+    }
+
+    return false;
   };
 
   const [isOpenFavoriteModal, toggleFavoriteModal] = useToggle();

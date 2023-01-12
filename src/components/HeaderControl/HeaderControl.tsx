@@ -20,11 +20,12 @@ interface IProps {
 }
 
 export const HeaderControl = ({ isOpen, closeBurger }: IProps) => {
-  const { width = 0 } = useWindowSize();
-  const dispatch = useAppDispatch();
   const { isAuth } = useAppSelector(getUser);
+  const dispatch = useAppDispatch();
+
   const { value, onChange } = useInput();
   const navigate = useNavigate();
+  const { width = 0 } = useWindowSize();
 
   const handleSearch = () => {
     navigate(`search/${value}/1`);

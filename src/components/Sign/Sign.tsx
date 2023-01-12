@@ -3,20 +3,20 @@ import { useState } from "react";
 import { SignItem, SignNavigation, StyledSign } from "./styles";
 
 export const Sign = () => {
-  const [isSignIn, setIsSignIn] = useState(true);
+  const [isSignIn, setSign] = useState(true);
 
-  const handleSignOn = () => {
-    setIsSignIn(true);
+  const handleSignUp = () => {
+    setSign(true);
   };
 
   const handleSignIn = () => {
-    setIsSignIn(false);
+    setSign(false);
   };
 
   return (
     <StyledSign>
       <SignNavigation>
-        <SignItem onClick={handleSignOn} activeColor={isSignIn} activeBorder={isSignIn}>
+        <SignItem onClick={handleSignUp} activeColor={isSignIn} activeBorder={isSignIn}>
           Sign in
         </SignItem>
         <SignItem onClick={handleSignIn} activeColor={!isSignIn} activeBorder={!isSignIn}>

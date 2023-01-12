@@ -1,4 +1,4 @@
-import { BookListItem, Pagination } from "components";
+import { BookListItem } from "components";
 import { IBook } from "types";
 import { StyledBooksList } from "./styles";
 

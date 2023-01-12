@@ -11,8 +11,6 @@ import {
   CustomLink,
 } from "./styles";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { getUser, useAppSelector } from "store";
 import { ROUTE } from "router";
 import { useToggle } from "hooks";

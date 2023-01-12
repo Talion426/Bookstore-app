@@ -1,27 +1,27 @@
-import { Mailing } from "components";
+import { Mailing, Title, BooksList } from "components";
 import { fetchNewBooks, getNewBooks, useAppDispatch, useAppSelector } from "store";
-import { Title, BooksList } from "components";
 import { useEffect } from "react";
-import { NewBooksWrapper } from "./styles";
+import { NewBooksWrapper, StyledHomePage } from "./styles";
 
 export const HomePage = () => {
-  const { isLoading, result, error } = useAppSelector(getNewBooks);
+  const { isLoading, results } = useAppSelector(getNewBooks);
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     dispatch(fetchNewBooks());
   }, [dispatch]);
 
   return (
-    <section>
-      {isLoading && <Title text="Loading..." />}
-      {error && <p>{error}</p>}
-      {result && (
+    <StyledHomePage>
+      {isLoading ? (
+        <Title text="Loading..." />
+      ) : (
         <NewBooksWrapper>
           <Title text="New Releases Books" />
-          <BooksList books={result} />
+          <BooksList books={results} />
         </NewBooksWrapper>
       )}
       <Mailing />
-    </section>
+    </StyledHomePage>
   );
 };

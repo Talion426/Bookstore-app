@@ -1,4 +1,4 @@
-import { BookDetails, DetailsSlider, Mailing, Title } from "components";
+import { BookDetails, Mailing, Title } from "components";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import {
@@ -16,7 +16,7 @@ import { StyledBookPage } from "./styles";
 
 export const BookPage = () => {
   const { isbn13 } = useParams();
-  const { result, isLoading, error } = useAppSelector(getBookDetails);
+  const { results, isLoading } = useAppSelector(getBookDetails);
   const { amount } = useAppSelector(getCartBooks);
   const { favorite } = useAppSelector(getFavoriteBooks);
   const dispatch = useAppDispatch();
@@ -27,26 +27,26 @@ export const BookPage = () => {
 
   const findFavorite = () => {
     if (favorite.length > 0) {
-      return favorite.find((item) => item.isbn13 === result.isbn13);
+      return favorite.find((item) => item.isbn13 === results.isbn13);
     } else return false;
   };
 
-  const cartItem = { ...result, summary: 1 };
+  const cartItem = { ...results, summary: 1 };
 
   return (
     <StyledBookPage>
-      {isLoading && <Title text="Loading..." />}
-      {error && <p>{error}</p>}
-      {result && (
+      {isLoading ? (
+        <Title text="Loading..." />
+      ) : (
         <>
           <BookDetails
-            book={result}
+            book={results}
             amount={amount}
             addToCart={() => dispatch(addBook(cartItem))}
             handleToFavorite={() => {
               findFavorite()
-                ? dispatch(deleteFavorite(result.isbn13))
-                : dispatch(addFavorite(result));
+                ? dispatch(deleteFavorite(results.isbn13))
+                : dispatch(addFavorite(results));
             }}
           />
           <Mailing />
@@ -55,5 +55,3 @@ export const BookPage = () => {
     </StyledBookPage>
   );
 };
-
-//<DetailsSlider />

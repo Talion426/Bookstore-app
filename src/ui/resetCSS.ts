@@ -6,6 +6,7 @@ export const ResetCSS = css`
     margin: 0;
     border: 0;
   }
+
   *,
   *::before,
   *::after {
@@ -13,10 +14,12 @@ export const ResetCSS = css`
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
+
   :focus,
   :active {
     outline: none;
   }
+
   a:focus,
   a:active {
     outline: none;
@@ -47,10 +50,12 @@ export const ResetCSS = css`
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
   }
+
   blockquote,
   q {
     quotes: none;
   }
+
   blockquote:before,
   blockquote:after,
   q:before,
@@ -58,45 +63,56 @@ export const ResetCSS = css`
     content: "";
     content: none;
   }
+
   table {
     border-collapse: collapse;
     border-spacing: 0;
   }
+
   input,
   button,
   textarea {
     font-family: inherit;
   }
+
   input::-ms-clear {
     display: none;
   }
+
   input::-webkit-search-decoration,
   input::-webkit-search-cancel-button,
   input::-webkit-search-results-button,
   input::-webkit-search-results-decoration {
     display: none;
   }
+
   button {
     cursor: pointer;
   }
+
   button::-moz-focus-inner {
     padding: 0;
     border: 0;
   }
+
   a,
   a:visited {
     text-decoration: none;
   }
+
   a:hover {
     text-decoration: none;
   }
+
   ul,
   ol {
     list-style: none;
   }
+
   img {
     vertical-align: top;
   }
+
   h1,
   h2,
   h3,

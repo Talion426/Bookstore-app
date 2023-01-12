@@ -1,21 +1,19 @@
 import {
   IBook,
-  IResponseNewBooks,
+  INewBooks,
   IResponseSearch,
   IBookDetails,
   ICartItem,
-  ISearchParams,
   ISearchResult,
   IBookISBN13,
 } from "./types";
 
 export type {
   IBook,
-  IResponseNewBooks,
+  INewBooks,
   IBookDetails,
   ICartItem,
   IResponseSearch,
-  ISearchParams,
   ISearchResult,
   IBookISBN13,
 };

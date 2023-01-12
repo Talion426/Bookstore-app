@@ -48,7 +48,6 @@ export const SignIn = () => {
         dispatch(
           setUser({
             email: user.email,
-            id: user.uid,
             password: password,
             isAuth: true,
           }),

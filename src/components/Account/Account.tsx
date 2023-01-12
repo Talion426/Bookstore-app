@@ -64,7 +64,6 @@ export const Account = ({ email, name, password }: IProps) => {
   };
 
   const handleUserAccount = (userData: IUserData) => {
-    const auth = getAuth();
     const user = auth.currentUser;
 
     if (user) {

@@ -4,13 +4,13 @@ import { restBooksAPI } from "services";
 import { IBookISBN13, IBookDetails } from "types";
 
 interface IGetBookDetails {
-  result: IBookDetails;
+  results: IBookDetails;
   isLoading: boolean;
   error: null | string;
 }
 
 const initialState: IGetBookDetails = {
-  result: {} as IBookDetails,
+  results: {} as IBookDetails,
   isLoading: false,
   error: null,
 };
@@ -40,12 +40,12 @@ const bookDetailsSlice = createSlice({
 
     builder.addCase(fetchGetBookDetails.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.result = payload;
+      state.results = payload;
     });
 
     builder.addCase(fetchGetBookDetails.rejected, (state, { payload }) => {
       if (payload) {
-        state.isLoading = true;
+        state.isLoading = false;
         state.error = payload;
       }
     });

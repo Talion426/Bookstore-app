@@ -66,6 +66,7 @@ const cartSlice = createSlice({
         state.totalPrice = totalPrice;
         state.amount = amount;
       };
+
       getTotalPrice();
     },
   },
