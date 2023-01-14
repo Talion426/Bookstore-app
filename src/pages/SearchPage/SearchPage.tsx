@@ -1,11 +1,13 @@
 import { BackArrowButton, BooksList, Pagination, Title } from "components";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchSearchBooks, getSearchBooks, useAppDispatch, useAppSelector } from "store";
 import { SearchBooksWrapper, Subtitle } from "./styles";
 
 export const SearchPage = () => {
   const { page, searchValue } = useParams();
+  const navigate = useNavigate();
+
   const { results, isLoading } = useAppSelector(getSearchBooks);
   const dispatch = useAppDispatch();
 
@@ -15,19 +17,6 @@ export const SearchPage = () => {
   const pageCount = Math.ceil(+total / ITEMS_PER_PAGE);
   const [itemOffset, setItemOffset] = useState(page);
 
-  const handlePageClick = (event: { selected: number }): void => {
-    const newOffset = event.selected;
-
-    if (newOffset) {
-      setItemOffset(String(newOffset));
-    }
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   useEffect(() => {
     dispatch(
       fetchSearchBooks({
@@ -36,6 +25,21 @@ export const SearchPage = () => {
       }),
     );
   }, [searchValue, itemOffset, dispatch]);
+
+  const handlePageClick = (event: { selected: number }): void => {
+    const newOffset = event.selected + 1 + "";
+
+    setItemOffset(() => {
+      return String(newOffset);
+    });
+
+    navigate(`/search/${searchValue}/${newOffset}`);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <SearchBooksWrapper>
