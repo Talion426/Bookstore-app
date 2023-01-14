@@ -19,7 +19,7 @@ export const SearchModal = ({ value }: IProps) => {
   useEffect(() => {
     dispatch(
       fetchSearchBooks({
-        searchValue: searchValue,
+        searchValue: value,
         page: "1",
       }),
     );
@@ -35,7 +35,13 @@ export const SearchModal = ({ value }: IProps) => {
         {books && books.length > 0 && (
           <>
             <SearchModalList books={books} />
-            <Button onClick={handleSearch}>all results</Button>
+            <Button
+              onClick={() => {
+                handleSearch();
+              }}
+            >
+              all results
+            </Button>
           </>
         )}
       </SearchModalWrapper>

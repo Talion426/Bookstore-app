@@ -5,7 +5,6 @@ import { ResetCSS } from "./resetCSS";
 import { DarkTheme, LightTheme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
-
   ${ResetCSS}
 
   html[theme="dark"]{

@@ -33,6 +33,7 @@ import { Notice } from "./Notice/Notice";
 import { SearchModal } from "./SearchModal/SearchModal";
 import { SearchModalList } from "./SearchModalList/SearchModalList";
 import { SearchModalItem } from "./SearchModalItem/SearchModalItem";
+import { Search } from "./Search/Search";
 //import {} from ".//";
 
 export {
@@ -71,4 +72,5 @@ export {
   SearchModal,
   SearchModalList,
   SearchModalItem,
+  Search,
 };
