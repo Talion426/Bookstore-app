@@ -15,7 +15,6 @@ import { useToggle } from "hooks";
 
 interface IProps {
   book: IBookDetails;
-  amount: number;
   handleToFavorite: () => void;
   addToCart: () => void;
 }

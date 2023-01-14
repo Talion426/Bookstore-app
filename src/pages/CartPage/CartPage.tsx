@@ -26,7 +26,7 @@ export const CartPage = () => {
               incAmount={() => dispatch(incAmount(book.isbn13))}
               decAmount={() => dispatch(decAmount(book.isbn13))}
               deleteBook={() => {
-                dispatch(deleteBook(book.isbn13));
+                dispatch(deleteBook(book));
               }}
             />
           );

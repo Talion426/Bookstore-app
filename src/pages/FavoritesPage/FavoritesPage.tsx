@@ -29,7 +29,7 @@ export const FavoritesPage = () => {
             <FavoriteItem
               key={book.isbn13}
               book={book}
-              deleteFavoriteBook={() => dispatch(deleteFavorite(book.isbn13))}
+              deleteFavoriteBook={() => dispatch(deleteFavorite(book))}
             />
           );
         })}

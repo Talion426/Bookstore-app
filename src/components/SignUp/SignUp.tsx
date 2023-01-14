@@ -18,10 +18,6 @@ export const SignUp = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const homeNavigate = () => {
-    navigate(ROUTE.HOME);
-  };
-
   const {
     register,
     handleSubmit,
@@ -35,14 +31,6 @@ export const SignUp = () => {
       confirmPassword: "",
     },
   });
-
-  const [isOpenModal, toggleModal] = useToggle();
-
-  const handleModal = () => {
-    toggleModal();
-
-    setTimeout(toggleModal, 3000);
-  };
 
   const handleSignUp = (userData: ISignUp) => {
     const { email, password, name } = userData;
@@ -66,12 +54,8 @@ export const SignUp = () => {
             displayName: name,
           });
         }
-      })
-      .then(() => {
-        handleModal();
-      })
-      .then(() => {
-        setTimeout(homeNavigate, 3000);
+
+        navigate(ROUTE.HOME);
       })
       .catch(() => alert("User existing!"));
   };
@@ -150,8 +134,6 @@ export const SignUp = () => {
       </InputWrapper>
 
       <Button type="submit">Sign up</Button>
-
-      {isOpenModal && <Notice>You have registered a new account</Notice>}
     </StyledSignUp>
   );
 };

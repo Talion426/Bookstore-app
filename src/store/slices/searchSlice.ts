@@ -40,9 +40,7 @@ const searchBooksSlice = createSlice({
 
     builder.addCase(fetchSearchBooks.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.results.books = payload.books;
-      state.results.page = payload.page;
-      state.results.total = payload.total;
+      state.results = payload;
     });
 
     builder.addCase(fetchSearchBooks.rejected, (state, { payload }) => {

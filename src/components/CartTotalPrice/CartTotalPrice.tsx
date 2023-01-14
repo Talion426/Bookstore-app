@@ -11,22 +11,23 @@ export const CartTotalPrice = () => {
     dispatch(getBooksTotalPrice());
   }, [cart, dispatch]);
 
-  const vat = totalPrice * 0.26;
-  const totalPriceWithVat = +totalPrice + +vat;
+  const fixedTotalPrice = totalPrice.toFixed(2);
+  const vat = (totalPrice * 0.26).toFixed(2);
+  const totalPriceWithVat = (+totalPrice + +vat).toFixed(2);
 
   return (
     <StyledCartTotalPrice>
       <PriceWrapper>
         <PriceTitle>Sum total:</PriceTitle>
-        <Price>$ {totalPrice.toFixed(2)}</Price>
+        <Price>$ {fixedTotalPrice}</Price>
       </PriceWrapper>
       <PriceWrapper>
         <PriceTitle>VAT:</PriceTitle>
-        <Price>$ {vat.toFixed(2)}</Price>
+        <Price>$ {vat}</Price>
       </PriceWrapper>
       <PriceWrapper>
         <TotalTitle>TOTAL:</TotalTitle>
-        <TotalTitle>${totalPriceWithVat.toFixed(2)}</TotalTitle>
+        <TotalTitle>${totalPriceWithVat}</TotalTitle>
       </PriceWrapper>
 
       <Button type="button">Check out</Button>

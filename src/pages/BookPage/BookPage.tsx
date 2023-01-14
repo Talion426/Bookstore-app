@@ -7,7 +7,6 @@ import {
   deleteFavorite,
   fetchGetBookDetails,
   getBookDetails,
-  getCartBooks,
   getFavoriteBooks,
   useAppDispatch,
   useAppSelector,
@@ -17,7 +16,6 @@ import { StyledBookPage } from "./styles";
 export const BookPage = () => {
   const { isbn13 } = useParams();
   const { results, isLoading } = useAppSelector(getBookDetails);
-  const { amount } = useAppSelector(getCartBooks);
   const { favorite } = useAppSelector(getFavoriteBooks);
   const dispatch = useAppDispatch();
 
@@ -41,12 +39,9 @@ export const BookPage = () => {
         <>
           <BookDetails
             book={results}
-            amount={amount}
             addToCart={() => dispatch(addBook(cartItem))}
             handleToFavorite={() => {
-              findFavorite()
-                ? dispatch(deleteFavorite(results.isbn13))
-                : dispatch(addFavorite(results));
+              findFavorite() ? dispatch(deleteFavorite(results)) : dispatch(addFavorite(results));
             }}
           />
           <Mailing />

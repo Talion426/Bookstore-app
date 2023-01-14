@@ -3,13 +3,11 @@ import { ICartItem } from "types";
 
 interface ICart {
   cart: ICartItem[];
-  amount: number;
   totalPrice: number;
 }
 
 const initialState: ICart = {
   cart: [],
-  amount: 0,
   totalPrice: 0,
 };
 
@@ -17,54 +15,50 @@ const cartSlice = createSlice({
   name: "cartBooks",
   initialState,
   reducers: {
-    addBook: (state, action: PayloadAction<ICartItem>) => {
-      const itemInCart = state.cart.find((item) => item.isbn13 === action.payload.isbn13);
+    addBook: (state, { payload }: PayloadAction<ICartItem>) => {
+      const itemInCart = state.cart.find((item) => item.isbn13 === payload.isbn13);
 
       if (itemInCart) {
-        state.amount++;
         itemInCart.summary++;
       }
 
       if (!itemInCart) {
         state.cart.push({
-          ...action.payload,
+          ...payload,
           summary: 1,
         });
       }
     },
 
-    deleteBook: (state, action: PayloadAction<string>) => {
-      state.cart = state.cart.filter((itemInCart) => {
-        return itemInCart.isbn13 !== action.payload;
-      });
+    deleteBook: (state, { payload }: PayloadAction<ICartItem>) => {
+      const itemInCart = state.cart.findIndex((item) => item.isbn13 === payload.isbn13);
+
+      state.cart.splice(itemInCart, 1);
     },
 
-    incAmount: (state, action: PayloadAction<string>) => {
-      const itemInCart = state.cart.find((book) => book.isbn13 === action.payload);
+    incAmount: (state, { payload }: PayloadAction<string>) => {
+      const itemInCart = state.cart.find((book) => book.isbn13 === payload);
 
       if (itemInCart) {
-        state.amount++;
         itemInCart.summary++;
       }
     },
 
-    decAmount: (state, action: PayloadAction<string>) => {
-      const itemInCart = state.cart.find((book) => book.isbn13 === action.payload);
+    decAmount: (state, { payload }: PayloadAction<string>) => {
+      const itemInCart = state.cart.find((book) => book.isbn13 === payload);
 
       if (itemInCart) {
-        state.amount--;
         itemInCart.summary--;
       }
     },
 
     getBooksTotalPrice: (state) => {
-      const getTotalPrice = (totalPrice = 0, amount = 0) => {
-        state.cart.forEach((itemInCart) => {
-          amount += itemInCart.summary;
-          totalPrice += itemInCart.summary * parseFloat(itemInCart.price.replace(/[$]/gi, ""));
+      const getTotalPrice = (totalPrice = 0) => {
+        state.cart.forEach((book) => {
+          totalPrice += book.summary * parseFloat(book.price.replace(/[$]/gi, ""));
         });
+
         state.totalPrice = totalPrice;
-        state.amount = amount;
       };
 
       getTotalPrice();
