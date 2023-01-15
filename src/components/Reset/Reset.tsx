@@ -1,9 +1,8 @@
 import { Button } from "components";
 import { useForm } from "react-hook-form";
 import { StyledReset, ErrorMessage, InputWrapper, Label, StyledInput, Title } from "./styles";
-import { confirmPasswordReset, getAuth } from "firebase/auth";
-import { setUser } from "store";
-import { useDispatch } from "react-redux";
+import { confirmPasswordReset, getAuth, verifyPasswordResetCode } from "firebase/auth";
+import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
 
@@ -13,7 +12,7 @@ interface IReset {
 }
 
 export const Reset = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const {
@@ -29,19 +28,26 @@ export const Reset = () => {
   });
 
   const handleReset = (userData: IReset) => {
-    const { password, confirmPassword } = userData;
+    const { password } = userData;
     const auth = getAuth();
 
-    confirmPasswordReset(auth, password, confirmPassword)
-      .then(() => {
-        dispatch(
-          setUser({
-            password: password,
-            isAuth: true,
-          }),
-        );
+    const queryParams = new URLSearchParams(location.search);
+    const actionCode = queryParams.get("oobCode") || "";
 
-        navigate(ROUTE.HOME);
+    verifyPasswordResetCode(auth, actionCode)
+      .then(() => {
+        confirmPasswordReset(auth, actionCode, password)
+          .then(() => {
+            dispatch(
+              setUser({
+                password: password,
+                isAuth: true,
+              }),
+            );
+
+            navigate(ROUTE.HOME);
+          })
+          .catch(() => alert("Error!"));
       })
       .catch(() => alert("Error!"));
   };
