@@ -15,6 +15,7 @@ import { StyledBookPage } from "./styles";
 
 export const BookPage = () => {
   const { isbn13 } = useParams();
+
   const { results, isLoading } = useAppSelector(getBookDetails);
   const { favorite } = useAppSelector(getFavoriteBooks);
   const dispatch = useAppDispatch();

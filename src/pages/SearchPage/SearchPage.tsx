@@ -9,9 +9,8 @@ export const SearchPage = () => {
   const navigate = useNavigate();
 
   const { results, isLoading } = useAppSelector(getSearchBooks);
-  const dispatch = useAppDispatch();
-
   const { books, total } = results;
+  const dispatch = useAppDispatch();
 
   const ITEMS_PER_PAGE = 10;
   const pageCount = Math.ceil(+total / ITEMS_PER_PAGE);
@@ -27,10 +26,10 @@ export const SearchPage = () => {
   }, [searchValue, itemOffset, dispatch]);
 
   const handlePageClick = (event: { selected: number }): void => {
-    const newOffset = event.selected + 1 + "";
+    const newOffset = String(event.selected + 1);
 
     setItemOffset(() => {
-      return String(newOffset);
+      return newOffset;
     });
 
     navigate(`/search/${searchValue}/${newOffset}`);

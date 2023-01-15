@@ -21,6 +21,7 @@ interface IProps {
 
 export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
   const { title, image, isbn13, url } = book;
+
   const { favorite } = useAppSelector(getFavoriteBooks);
 
   const handleToggleToCart = () => {

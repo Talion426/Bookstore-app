@@ -12,7 +12,7 @@ import { StyledFavoritesPage, FavoriteList } from "./styles";
 
 export const FavoritesPage = () => {
   const { favorite } = useAppSelector(getFavoriteBooks);
-  const { results } = useAppSelector(getNewBooks);
+  const { results, isLoading } = useAppSelector(getNewBooks);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -34,7 +34,11 @@ export const FavoritesPage = () => {
           );
         })}
       </FavoriteList>
-      <DetailsSlider title="New Books" books={results} />
+      {isLoading ? (
+        <Title text="Loading..." />
+      ) : (
+        <DetailsSlider title="New Books" books={results} />
+      )}
     </StyledFavoritesPage>
   );
 };

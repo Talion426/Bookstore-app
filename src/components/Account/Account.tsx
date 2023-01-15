@@ -76,8 +76,7 @@ export const Account = ({ email, name, password }: IProps) => {
               password: userData.newPassword,
             }),
           );
-        })
-        .then(() => {
+
           handleModal();
         })
         .catch((error) => {

@@ -30,6 +30,7 @@ export const HeaderNavigation = ({ closeBurger }: IProps) => {
           <Text onClick={closeBurger}>Favorites</Text>
         )}
       </NavItem>
+
       <ShoppingBagNavItem to={ROUTE.CART}>
         {isMobile ? (
           <IconContainer>
@@ -40,6 +41,7 @@ export const HeaderNavigation = ({ closeBurger }: IProps) => {
           <Text onClick={closeBurger}>Cart</Text>
         )}
       </ShoppingBagNavItem>
+
       <NavItem to={ROUTE.ACCOUNT}>
         {isMobile ? <AccountIcon /> : <Text onClick={closeBurger}>Account</Text>}
       </NavItem>

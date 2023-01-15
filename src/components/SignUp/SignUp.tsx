@@ -1,11 +1,10 @@
-import { Button, Notice } from "components";
+import { Button } from "components";
 import { useForm } from "react-hook-form";
 import { StyledSignUp, ErrorMessage, InputWrapper, Label, StyledInput } from "./styles";
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import { setUser, useAppDispatch } from "store";
 import { useNavigate } from "react-router-dom";
 import { ROUTE } from "router";
-import { useToggle } from "hooks";
 
 interface ISignUp {
   name: string;

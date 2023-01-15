@@ -41,7 +41,7 @@ export const Mailing = () => {
               autoComplete="off"
               {...register("email", {
                 pattern: {
-                  value: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                  value: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
                   message: "Enter the correct email!",
                 },
                 required: "Email is required field!",
