@@ -98,7 +98,7 @@ export const ButtonsWrapper = styled.div`
   gap: 10px;
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   width: 56px;
   height: 56px;
 
@@ -143,7 +143,7 @@ export const Price = styled.p`
   }
 `;
 
-export const DeleteButton = styled.button`
+export const DeleteButton = styled(motion.button)`
   position: absolute;
   top: calc(50% - 56px);
   right: 0;

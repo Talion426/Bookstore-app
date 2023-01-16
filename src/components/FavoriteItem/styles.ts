@@ -103,7 +103,7 @@ export const Price = styled.p`
   ${Typography.H3};
 `;
 
-export const HeartButton = styled.button`
+export const HeartButton = styled(motion.button)`
   position: absolute;
   top: calc(50% - 56px);
   right: 0;

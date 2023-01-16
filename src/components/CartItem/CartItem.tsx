@@ -73,7 +73,7 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
     >
       <ImageWrapper>
         <Image src={image} alt={title} />
-        <DeleteButton onClick={handleDeleteBook}>
+        <DeleteButton onClick={handleDeleteBook} whileHover={{ scale: 1.2 }}>
           <CancelIcon />
         </DeleteButton>
       </ImageWrapper>
@@ -83,11 +83,11 @@ export const CartItem = ({ book, deleteBook, incAmount, decAmount }: IProps) => 
         </Title>
         <Subtitle>{subtitle}</Subtitle>
         <ButtonsWrapper>
-          <Button onClick={handleDecAmount} disabled={handleSummary()}>
+          <Button onClick={handleDecAmount} disabled={handleSummary()} whileHover={{ scale: 1.1 }}>
             <MinusIcon />
           </Button>
           <Counter>{summary}</Counter>
-          <Button onClick={handleIncAmount}>
+          <Button onClick={handleIncAmount} whileHover={{ scale: 1.1 }}>
             <PlusIcon />
           </Button>
         </ButtonsWrapper>

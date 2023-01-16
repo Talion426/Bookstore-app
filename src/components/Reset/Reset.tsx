@@ -31,9 +31,9 @@ export const Reset = () => {
     const { password } = userData;
     const auth = getAuth();
 
-    //const queryParams = new URLSearchParams(location.search);
-    //const actionCode = queryParams.get("oobCode") || "";
-    const actionCode = "";
+    // eslint-disable-next-line
+    const queryParams = new URLSearchParams(location.search);
+    const actionCode = queryParams.get("oobCode") || "";
 
     verifyPasswordResetCode(auth, actionCode)
       .then(() => {

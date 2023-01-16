@@ -46,7 +46,11 @@ export const SearchPage = () => {
       {books && books.length > 0 ? (
         <>
           <Title text={`'${searchValue}' search results`} />
-          <Subtitle>{`Found ${total} books`}</Subtitle>
+          <Subtitle
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+          >{`Found ${total} books`}</Subtitle>
           <BooksList books={books} />
           <Pagination pageCount={pageCount} PageClick={handlePageClick} />
         </>

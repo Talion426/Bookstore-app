@@ -32,7 +32,7 @@ export const StyledSearch = styled(motion.input)`
   }
 `;
 
-export const SearchButton = styled.button`
+export const SearchButton = styled(motion.button)`
   position: absolute;
   top: 1px;
   right: 0;

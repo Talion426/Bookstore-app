@@ -30,12 +30,8 @@ import { Reset } from "./Reset/Reset";
 import { CartTotalPrice } from "./CartTotalPrice/CartTotalPrice";
 import { Portal } from "./Portal/Portal";
 import { Notice } from "./Notice/Notice";
-import { SearchModal } from "./SearchModal/SearchModal";
-import { SearchModalList } from "./SearchModalList/SearchModalList";
-import { SearchModalItem } from "./SearchModalItem/SearchModalItem";
 import { Search } from "./Search/Search";
 import { ProgressBar } from "./ProgressBar/ProgressBar";
-//import {} from ".//";
 
 export {
   Header,
@@ -70,9 +66,6 @@ export {
   CartTotalPrice,
   Portal,
   Notice,
-  SearchModal,
-  SearchModalList,
-  SearchModalItem,
   Search,
   ProgressBar,
 };

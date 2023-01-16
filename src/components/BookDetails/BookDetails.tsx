@@ -72,6 +72,7 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
               handleToggleToFavorite();
               handleFavoriteModal();
             }}
+            whileHover={{ scale: 1.2 }}
           >
             {findFavorite() ? (
               <HeartIcon fill={Color.Red} stroke={Color.Red} />

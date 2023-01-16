@@ -71,7 +71,7 @@ export const DescriptionWrapper = styled(motion.div)`
   }
 `;
 
-export const AddFavoriteButton = styled.button`
+export const AddFavoriteButton = styled(motion.button)`
   position: absolute;
   top: 0;
   right: 0;
@@ -79,6 +79,7 @@ export const AddFavoriteButton = styled.button`
   padding: 16px 16px 12px;
 
   background: ${Color.Primary};
+  transform-origin: 100% 0;
 
   ${Media.MD} {
     padding: 12px 12px 8px;

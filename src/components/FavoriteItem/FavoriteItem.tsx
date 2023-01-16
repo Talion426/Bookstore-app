@@ -54,7 +54,7 @@ export const FavoriteItem = ({ book, deleteFavoriteBook }: IProps) => {
     >
       <ImageWrapper>
         <Image src={image} alt={title} />
-        <HeartButton onClick={deleteFavoriteBook}>
+        <HeartButton onClick={deleteFavoriteBook} whileHover={{ scale: 1.2 }}>
           <HeartIcon />
         </HeartButton>
       </ImageWrapper>

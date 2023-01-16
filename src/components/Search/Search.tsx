@@ -7,10 +7,6 @@ interface IProps {
   closeBurger: () => void;
 }
 
-interface ISearch {
-  search: string;
-}
-
 export const Search = ({ closeBurger }: IProps) => {
   const navigate = useNavigate();
 
@@ -43,6 +39,7 @@ export const Search = ({ closeBurger }: IProps) => {
           handleSearchButton();
           closeBurger();
         }}
+        whileHover={{ scale: 1.1 }}
       >
         <SearchIcon />
       </SearchButton>
