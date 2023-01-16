@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Typography, Color } from "ui";
+import { motion } from "framer-motion";
 
-export const StyledSignIn = styled.form`
+export const StyledSignIn = styled(motion.form)`
   display: flex;
   flex-direction: column;
 

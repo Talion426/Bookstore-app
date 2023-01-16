@@ -1,29 +1,37 @@
 import { SignIn, SignUp } from "components";
+import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { useState } from "react";
 import { SignItem, SignNavigation, StyledSign } from "./styles";
 
 export const Sign = () => {
-  const [isSignIn, setSign] = useState(true);
+  const [isSign, setSign] = useState(true);
 
-  const handleSignUp = () => {
+  const handleSignIn = () => {
     setSign(true);
   };
 
-  const handleSignIn = () => {
+  const handleSignUp = () => {
     setSign(false);
   };
 
   return (
-    <StyledSign>
-      <SignNavigation>
-        <SignItem onClick={handleSignUp} activeColor={isSignIn} activeBorder={isSignIn}>
-          Sign in
-        </SignItem>
-        <SignItem onClick={handleSignIn} activeColor={!isSignIn} activeBorder={!isSignIn}>
-          Sign up
-        </SignItem>
-      </SignNavigation>
-      {isSignIn ? <SignIn /> : <SignUp />}
-    </StyledSign>
+    <AnimateSharedLayout>
+      <StyledSign
+        layout
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
+        <SignNavigation>
+          <SignItem onClick={handleSignIn} activeColor={isSign} activeBorder={isSign}>
+            Sign in
+          </SignItem>
+          <SignItem onClick={handleSignUp} activeColor={!isSign} activeBorder={!isSign}>
+            Sign up
+          </SignItem>
+        </SignNavigation>
+        <AnimatePresence initial={false}>{isSign ? <SignIn /> : <SignUp />}</AnimatePresence>
+      </StyledSign>
+    </AnimateSharedLayout>
   );
 };

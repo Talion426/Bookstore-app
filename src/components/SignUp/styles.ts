@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Typography, Color } from "ui";
 
-export const StyledSignUp = styled.form`
+export const StyledSignUp = styled(motion.form)`
   display: flex;
   flex-direction: column;
 

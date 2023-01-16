@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Typography } from "ui";
 
-export const StyledSign = styled.div`
+export const StyledSign = styled(motion.section)`
   max-width: 544px;
   margin: 0 auto 72px auto;
 

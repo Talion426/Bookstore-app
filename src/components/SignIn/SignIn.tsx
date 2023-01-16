@@ -15,6 +15,8 @@ export const SignIn = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const auth = getAuth();
+
   const {
     register,
     handleSubmit,
@@ -28,7 +30,6 @@ export const SignIn = () => {
 
   const handleSignIn = (userData: ISingIn) => {
     const { email, password } = userData;
-    const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
       .then(({ user }) => {
@@ -46,7 +47,14 @@ export const SignIn = () => {
   };
 
   return (
-    <StyledSignIn onSubmit={handleSubmit(handleSignIn)}>
+    <StyledSignIn
+      onSubmit={handleSubmit(handleSignIn)}
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <InputWrapper>
         <Label>Email</Label>
         <StyledInput

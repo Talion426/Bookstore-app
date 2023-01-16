@@ -39,9 +39,9 @@ export const SignUp = () => {
       .then(({ user }) => {
         dispatch(
           setUser({
+            name: name,
             email: user.email,
             password: password,
-            name: name,
             isAuth: true,
           }),
         );
@@ -60,7 +60,14 @@ export const SignUp = () => {
   };
 
   return (
-    <StyledSignUp onSubmit={handleSubmit(handleSignUp)}>
+    <StyledSignUp
+      onSubmit={handleSubmit(handleSignUp)}
+      layout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <InputWrapper>
         <Label>Name</Label>
         <StyledInput
