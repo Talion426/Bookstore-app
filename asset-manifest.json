@@ -1,16 +1,29 @@
 {
   "files": {
-    "main.js": "/Bookstore-app/static/js/main.44d92396.js",
-    "static/media/bookstore-logo-icon.svg": "/Bookstore-app/static/media/bookstore-logo-icon.4df062493d3c8a2d9a244c508c206884.svg",
-    "static/media/heart-icon.svg": "/Bookstore-app/static/media/heart-icon.28220c581538742fc7469c10d8a9e269.svg",
-    "static/media/shopping-bag-icon.svg": "/Bookstore-app/static/media/shopping-bag-icon.291776166f59fef865d350aaa5d72385.svg",
-    "static/media/search-icon.svg": "/Bookstore-app/static/media/search-icon.fb7c71339a4b264dfb3e9806f3b103eb.svg",
-    "static/media/account-icon.svg": "/Bookstore-app/static/media/account-icon.f95ce053779a6201d74bbfa54c39de4c.svg",
-    "static/media/burger-menu-icon.svg": "/Bookstore-app/static/media/burger-menu-icon.59dba82df335b19ebcaa59651c28f447.svg",
+    "main.css": "/Bookstore-app/static/css/main.8fe998ed.css",
+    "main.js": "/Bookstore-app/static/js/main.f89999a5.js",
+    "static/media/bookstore-logo.svg": "/Bookstore-app/static/media/bookstore-logo.4df062493d3c8a2d9a244c508c206884.svg",
+    "static/media/slick.svg": "/Bookstore-app/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Bookstore-app/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Bookstore-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Bookstore-app/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/back-arrow.svg": "/Bookstore-app/static/media/back-arrow.eb2be55673c64c9cddee6f21fa48b565.svg",
+    "static/media/next-arrow.svg": "/Bookstore-app/static/media/next-arrow.a3ea399522a354364acc19206c6bba58.svg",
+    "static/media/prev-arrow.svg": "/Bookstore-app/static/media/prev-arrow.6f795d96562e2e5dd42046a35cf93847.svg",
+    "static/media/heart.svg": "/Bookstore-app/static/media/heart.825f7a0e0e6d0e35b876cb335f3b7e44.svg",
     "index.html": "/Bookstore-app/index.html",
-    "main.44d92396.js.map": "/Bookstore-app/static/js/main.44d92396.js.map"
+    "static/media/cancel.svg": "/Bookstore-app/static/media/cancel.eaf2b4fc75e95b3f7bf304547b881a51.svg",
+    "static/media/shopping-bag.svg": "/Bookstore-app/static/media/shopping-bag.291776166f59fef865d350aaa5d72385.svg",
+    "static/media/search.svg": "/Bookstore-app/static/media/search.fb7c71339a4b264dfb3e9806f3b103eb.svg",
+    "static/media/account.svg": "/Bookstore-app/static/media/account.f95ce053779a6201d74bbfa54c39de4c.svg",
+    "static/media/burger-menu.svg": "/Bookstore-app/static/media/burger-menu.59dba82df335b19ebcaa59651c28f447.svg",
+    "static/media/plus.svg": "/Bookstore-app/static/media/plus.25a3cb264e352b2755802f04d2eb625a.svg",
+    "static/media/minus.svg": "/Bookstore-app/static/media/minus.1abf18d3cc20cb8355f968202aafc821.svg",
+    "main.8fe998ed.css.map": "/Bookstore-app/static/css/main.8fe998ed.css.map",
+    "main.f89999a5.js.map": "/Bookstore-app/static/js/main.f89999a5.js.map"
   },
   "entrypoints": [
-    "static/js/main.44d92396.js"
+    "static/css/main.8fe998ed.css",
+    "static/js/main.f89999a5.js"
   ]
 }
