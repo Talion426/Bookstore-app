@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Typography, Media } from "ui";
 
-export const StyledDetailsSlider = styled.section`
+export const StyledDetailsSlider = styled(motion.section)`
   position: relative;
 
   margin-bottom: 72px;

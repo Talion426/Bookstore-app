@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Color, Typography, Media } from "ui";
 
-export const StyledErrorPage = styled.section`
+export const StyledErrorPage = styled(motion.section)`
   flex: 1 0 auto;
 
   display: flex;
@@ -13,24 +14,24 @@ export const StyledErrorPage = styled.section`
   text-align: center;
 `;
 
-export const Title = styled.h1`
+export const Title = styled(motion.h1)`
   margin-bottom: 72px;
 
   ${Typography.H1};
   font-size: 140px;
 
-  ${Media.SM}{
+  ${Media.SM} {
     font-size: 80px;
   }
 `;
 
-export const Subtitle = styled.h3`
+export const Subtitle = styled(motion.h3)`
   margin-bottom: 32px;
 
   ${Typography.H2};
 `;
 
-export const Text = styled.p`
+export const Text = styled(motion.p)`
   margin-bottom: 32px;
 
   ${Typography.H3};

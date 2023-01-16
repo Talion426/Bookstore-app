@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
-export const StyledCartItem = styled.div`
+export const StyledCartItem = styled(motion.li)`
   position: relative;
 
   display: flex;

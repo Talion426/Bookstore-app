@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Typography, Media } from "ui";
 
-export const BooksListItem = styled.figure`
+export const BooksListItem = styled(motion.figure)`
   display: flex;
   flex-direction: column;
 
@@ -9,7 +10,7 @@ export const BooksListItem = styled.figure`
   max-width: 352px;
 
   border: 2px solid ${Color.Secondary_Background};
-  border-radius: 20px;
+  border-radius: 25px;
 
   cursor: pointer;
 

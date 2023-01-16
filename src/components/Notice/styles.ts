@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media, Typography } from "ui";
 
-export const StyledNotice = styled.div`
+export const StyledNotice = styled(motion.div)`
   position: fixed;
   top: 150px;
   right: 150px;

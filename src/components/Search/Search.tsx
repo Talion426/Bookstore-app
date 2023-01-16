@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useWindowSize } from "hooks";
 import { useNavigate } from "react-router-dom";
 import { SearchButton, SearchWrapper, StyledSearch } from "./styles";
+import { Color } from "ui";
 
 interface IProps {
   closeBurger: () => void;
@@ -46,6 +47,8 @@ export const Search = ({ closeBurger }: IProps) => {
             message: "Please, enter a value",
           },
         })}
+        whileFocus={{ border: `1px solid ${Color.Primary}` }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
       />
       <SearchButton
         onClick={() => {

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media, Typography } from "ui";
 
@@ -9,7 +10,7 @@ export const SearchWrapper = styled.form`
   }
 `;
 
-export const StyledSearch = styled.input`
+export const StyledSearch = styled(motion.input)`
   width: 542px;
   height: 56px;
   padding: 15px 75px 15px 20px;

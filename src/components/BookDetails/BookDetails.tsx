@@ -60,7 +60,12 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
       <BackArrowButton />
       <Title text={title} />
       <StyledBookDetails>
-        <ImageWrapper>
+        <ImageWrapper
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          viewport={{ amount: 0.2, once: true }}
+        >
           <Image src={image} alt={title} />
           <AddFavoriteButton
             onClick={() => {
@@ -75,7 +80,12 @@ export const BookDetails = ({ book, handleToFavorite, addToCart }: IProps) => {
             )}
           </AddFavoriteButton>
         </ImageWrapper>
-        <DescriptionWrapper>
+        <DescriptionWrapper
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          viewport={{ amount: 0.2, once: true }}
+        >
           <Description book={book} />
           <Button
             type="button"

@@ -25,10 +25,16 @@ export const StyledNav = styled.nav`
 export const NavItem = styled(NavLink)`
   display: block;
 
+  transition: all 0.1s ease-in-out;
+
   svg {
     path {
       stroke: ${Color.Primary};
     }
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 
   ${Media.LG} {
@@ -42,10 +48,16 @@ export const ShoppingBagNavItem = styled(NavLink)`
 
   display: block;
 
+  transition: all 0.1s ease-in-out;
+
   svg {
     path {
       stroke: ${Color.Primary};
     }
+  }
+
+  &:hover {
+    transform: scale(1.1);
   }
 
   ${Media.LG} {

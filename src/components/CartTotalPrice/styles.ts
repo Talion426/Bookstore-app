@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media, Typography } from "ui";
 
-export const StyledCartTotalPrice = styled.div`
+export const StyledCartTotalPrice = styled(motion.div)`
   position: relative;
   top: 0;
   left: calc(100% - 256px);

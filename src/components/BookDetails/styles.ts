@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Media, Color, Typography } from "ui";
 
@@ -13,7 +14,7 @@ export const StyledBookDetails = styled.div`
   }
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled(motion.div)`
   position: relative;
 
   display: flex;
@@ -53,7 +54,7 @@ export const Image = styled.img`
   height: 100%;
 `;
 
-export const DescriptionWrapper = styled.div`
+export const DescriptionWrapper = styled(motion.div)`
   width: 448px;
 
   ${Media.EL} {

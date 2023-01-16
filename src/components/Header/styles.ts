@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Color } from "ui";
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled(motion.header)`
   position: relative;
   z-index: 1000;
 

@@ -1,13 +1,16 @@
-import { Footer, Header } from "components";
+import { Footer, Header, ProgressBar } from "components";
 import { Outlet } from "react-router-dom";
 import { Wrapper } from "ui";
 
 export const Layout = () => {
   return (
-    <Wrapper>
-      <Header />
-      <Outlet />
-      <Footer />
-    </Wrapper>
+    <>
+      <ProgressBar />
+      <Wrapper>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Wrapper>
+    </>
   );
 };

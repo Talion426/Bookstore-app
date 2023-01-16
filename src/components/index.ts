@@ -34,6 +34,7 @@ import { SearchModal } from "./SearchModal/SearchModal";
 import { SearchModalList } from "./SearchModalList/SearchModalList";
 import { SearchModalItem } from "./SearchModalItem/SearchModalItem";
 import { Search } from "./Search/Search";
+import { ProgressBar } from "./ProgressBar/ProgressBar";
 //import {} from ".//";
 
 export {
@@ -73,4 +74,5 @@ export {
   SearchModalList,
   SearchModalItem,
   Search,
+  ProgressBar,
 };

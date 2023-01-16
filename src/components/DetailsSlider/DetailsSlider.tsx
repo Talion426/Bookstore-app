@@ -35,8 +35,28 @@ export const DetailsSlider = ({ title, books }: IProps) => {
     ],
   };
 
+  const sliderVariants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.5,
+        duration: 0.8,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+  };
+
   return (
-    <StyledDetailsSlider>
+    <StyledDetailsSlider
+      variants={sliderVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+    >
       <Title>{title}</Title>
       <Slider {...settings}>
         {books.map((book) => (

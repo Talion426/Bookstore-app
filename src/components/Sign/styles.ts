@@ -28,6 +28,4 @@ export const SignItem = styled.button<{ activeColor?: boolean; activeBorder?: bo
   background: none;
   border-bottom: ${({ activeBorder }) =>
     activeBorder ? `2px solid ${Color.Primary}` : `2px solid ${Color.Primary_Background}`};
-
-  transition: all 0.2s ease-in-out;
 `;

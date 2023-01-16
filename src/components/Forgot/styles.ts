@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
-export const StyledForgot = styled.form`
+export const StyledForgot = styled(motion.form)`
   width: 544px;
   padding: 40px 32px;
 

@@ -31,8 +31,9 @@ export const Reset = () => {
     const { password } = userData;
     const auth = getAuth();
 
-    const queryParams = new URLSearchParams(location.search);
-    const actionCode = queryParams.get("oobCode") || "";
+    //const queryParams = new URLSearchParams(location.search);
+    //const actionCode = queryParams.get("oobCode") || "";
+    const actionCode = "";
 
     verifyPasswordResetCode(auth, actionCode)
       .then(() => {
@@ -53,7 +54,12 @@ export const Reset = () => {
   };
 
   return (
-    <StyledReset onSubmit={handleSubmit(handleReset)}>
+    <StyledReset
+      onSubmit={handleSubmit(handleReset)}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+    >
       <Title>New password</Title>
 
       <InputWrapper>

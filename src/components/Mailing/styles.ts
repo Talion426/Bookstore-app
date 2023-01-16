@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Typography, Media } from "ui";
 
-export const StyledMailing = styled.section`
+export const StyledMailing = styled(motion.section)`
   padding: 56px 64px;
   margin-bottom: 72px;
 

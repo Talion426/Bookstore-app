@@ -86,11 +86,31 @@ export const Account = ({ email, name, password }: IProps) => {
     reset();
   };
 
+  const accountVariants = {
+    visible: (i: number) => {
+      const delay = 0.5 + i * 0.1;
+      return {
+        opacity: 1,
+        x: 0,
+        transition: {
+          delay,
+          duration: 0.5,
+        },
+      };
+    },
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+  };
+
   return (
     <StyledAccount onSubmit={handleSubmit(handleUserAccount)}>
-      <Subtitle>Profile</Subtitle>
+      <Subtitle variants={accountVariants} initial="hidden" animate="visible" custom={1}>
+        Profile
+      </Subtitle>
 
-      <ProfileWrapper>
+      <ProfileWrapper variants={accountVariants} initial="hidden" animate="visible" custom={2}>
         <Input
           label="Name"
           type="text"
@@ -107,9 +127,11 @@ export const Account = ({ email, name, password }: IProps) => {
         />
       </ProfileWrapper>
 
-      <Subtitle>Password</Subtitle>
+      <Subtitle variants={accountVariants} initial="hidden" animate="visible" custom={3}>
+        Password
+      </Subtitle>
 
-      <PasswordWrapper>
+      <PasswordWrapper variants={accountVariants} initial="hidden" animate="visible" custom={4}>
         <Input
           label="Password"
           type="password"
@@ -119,7 +141,7 @@ export const Account = ({ email, name, password }: IProps) => {
         />
       </PasswordWrapper>
 
-      <NewPasswordWrapper>
+      <NewPasswordWrapper variants={accountVariants} initial="hidden" animate="visible" custom={5}>
         <InputWrapper>
           <Label>New password</Label>
           <StyledInput
@@ -158,7 +180,7 @@ export const Account = ({ email, name, password }: IProps) => {
         </InputWrapper>
       </NewPasswordWrapper>
 
-      <ButtonsWrapper>
+      <ButtonsWrapper variants={accountVariants} initial="hidden" animate="visible" custom={6}>
         <Button type="submit" buttonWidth="227px">
           Save changes
         </Button>

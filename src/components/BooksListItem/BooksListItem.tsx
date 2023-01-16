@@ -1,6 +1,7 @@
 import { generatePath, Link } from "react-router-dom";
 import { ROUTE } from "router";
 import { IBook } from "types";
+import { Color } from "ui";
 import {
   PriceWrapper,
   ImageWrapper,
@@ -19,6 +20,25 @@ interface IProps {
 export const BookListItem = ({ book }: IProps) => {
   const { image, title, subtitle, isbn13, price } = book;
 
+  const listVariants = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.5,
+        duration: 0.8,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      x: -100,
+    },
+    hover: {
+      scale: 1.03,
+      boxShadow: `3px 3px 10px ${Color.Secondary}`,
+    },
+  };
+
   const handleScroll = () => {
     window.scrollTo({
       top: 0,
@@ -27,7 +47,13 @@ export const BookListItem = ({ book }: IProps) => {
   };
 
   return (
-    <BooksListItem>
+    <BooksListItem
+      variants={listVariants}
+      whileHover="hover"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.2, once: true }}
+    >
       <Link to={generatePath(ROUTE.BOOK, { isbn13: isbn13 })} onClick={handleScroll}>
         <ImageWrapper>
           <Image src={image} alt={title} />

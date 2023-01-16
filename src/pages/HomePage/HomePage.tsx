@@ -16,12 +16,14 @@ export const HomePage = () => {
       {isLoading ? (
         <Title text="Loading..." />
       ) : (
-        <NewBooksWrapper>
-          <Title text="New Releases Books" />
-          <BooksList books={results} />
-        </NewBooksWrapper>
+        <>
+          <NewBooksWrapper>
+            <Title text="New Releases Books" />
+            <BooksList books={results} />
+          </NewBooksWrapper>
+          <Mailing />
+        </>
       )}
-      <Mailing />
     </StyledHomePage>
   );
 };

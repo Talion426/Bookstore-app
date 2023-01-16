@@ -1,6 +1,9 @@
+import { motion } from "framer-motion";
 import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
+
+export const StyledDetailsTabs = styled(motion.section)``;
 
 export const StyledTabs = styled(Tabs)`
   min-height: 200px;

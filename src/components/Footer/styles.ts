@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Typography, Color, Media } from "ui";
 
-export const StyledFooter = styled.footer`
+export const StyledFooter = styled(motion.footer)`
   display: flex;
   justify-content: space-between;
 

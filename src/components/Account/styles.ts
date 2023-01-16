@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Typography, Media } from "ui";
 
@@ -5,7 +6,7 @@ export const StyledAccount = styled.form`
   flex: 1 0 auto;
 `;
 
-export const ProfileWrapper = styled.div`
+export const ProfileWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 32px;
@@ -17,13 +18,13 @@ export const ProfileWrapper = styled.div`
   }
 `;
 
-export const PasswordWrapper = styled.div`
+export const PasswordWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1fr);
   column-gap: 32px;
 `;
 
-export const NewPasswordWrapper = styled.div`
+export const NewPasswordWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 32px;
@@ -33,14 +34,14 @@ export const NewPasswordWrapper = styled.div`
   }
 `;
 
-export const Subtitle = styled.h3`
+export const Subtitle = styled(motion.h3)`
   margin-bottom: 16px;
 
   ${Typography.H2}
   color: ${Color.Primary};
 `;
 
-export const ButtonsWrapper = styled.div`
+export const ButtonsWrapper = styled(motion.div)`
   display: flex;
   justify-content: end;
   gap: 30px;

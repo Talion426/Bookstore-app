@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Color, Media, Typography } from "ui";
 
-export const StyledPagination = styled.div`
+export const StyledPagination = styled(motion.div)`
   .paginate {
     &__container {
       display: flex;

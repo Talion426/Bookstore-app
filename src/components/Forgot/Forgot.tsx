@@ -46,7 +46,12 @@ export const Forgot = () => {
   };
 
   return (
-    <StyledForgot onSubmit={handleSubmit(handleForgot)}>
+    <StyledForgot
+      onSubmit={handleSubmit(handleForgot)}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, delay: 0.2 }}
+    >
       <Title>Reset password</Title>
 
       {isSent && (
