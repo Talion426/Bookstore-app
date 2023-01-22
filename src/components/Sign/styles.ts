@@ -7,9 +7,10 @@ export const StyledSign = styled(motion.section)`
   margin: 0 auto 72px auto;
 
   border: 1px solid ${Color.Gray};
+  overflow: hidden;
 `;
 
-export const SignNavigation = styled.div`
+export const SignNavigation = styled(motion.div)`
   display: flex;
   justify-content: center;
 

@@ -22,7 +22,7 @@ export const Sign = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, delay: 0.2 }}
       >
-        <SignNavigation>
+        <SignNavigation layout>
           <SignItem onClick={handleSignIn} activeColor={isSign} activeBorder={isSign}>
             Sign in
           </SignItem>
